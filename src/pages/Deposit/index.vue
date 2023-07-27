@@ -15,7 +15,7 @@
       </div>
       <!-- balance bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
-        <p>Deposit Currency</p>
+        <p class="text-color">Deposit Currency</p>
       </div>
       <!-- network bar start  -->
       <div class="networkBar" @click="makeDeposit">
@@ -41,16 +41,15 @@
       </div>
       <!-- network bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
-        <p>
-          <ion-icon name="alert-circle-outline"></ion-icon> Get extra <span> 300% </span> bonus on
-          minimum of <span>0.001 TRX</span> deposit
+        <p class="text-color">
+          <ion-icon name="alert-circle-outline"></ion-icon> Minimum Deposit is 10 trx, maximum deposit is 100,000 trx. 
         </p>
       </div>
       <!-- deposit addres start -->
       <div class="addres" style="width: 90%; margin: auto;">
         <div class="addresBox">
           <div class="depositheader" style="margin-top: 50px;">
-            <p>Deposit Addres</p>
+            <p class="text-color">Deposit Addres</p>
           </div>
           <div class="copyAddres">
             <div>
@@ -64,9 +63,15 @@
         </div>
       </div>
       <!-- deposit addres end -->
-      <div class="img-send">
+      <div class="img-send text-div">
         <label for="img-send"><span style="color: black;">Send Decont: </span></label>
-        <input type="file">
+        <input type="file" class="text-color">
+      </div>
+      <br><br>
+      <div class="text-div">
+        <p class="text-color">Copy and send tron ​​(trc20) address to invest.  then send us the check for proof. Your investment will be deposited within 1-2 hours.</p><br>
+        <p id="text-color">( The deposit is made between 08:00 and 20:00.) The transactions you see work with Swedish time (GMT+2). </p> <br>
+       
       </div>
     </div>
     <!-- deposit end -->
@@ -131,6 +136,8 @@ export default {
 <style scoped>
 main {
   color: #fff;
+}
+.depositBox{
 }
 
 .currencyBar .currency {
@@ -247,4 +254,16 @@ main {
   margin: 1.33rem;
   border-radius: 1rem;
   padding: 11px;
-}</style>
+}
+#text-color{
+  color: #ff0000be;
+  font-weight: 600;
+
+}
+p{    
+  font-family:Verdana, Geneva, Tahoma, sans-serif !important;
+}
+.text-color{  color:#333 ;}
+.text-div{padding: 0px 25px;}
+
+</style>
