@@ -19,12 +19,18 @@
 
       <div class="packages">
         <div class="package" v-for="(item, index) in packages" :key="index">
-          <div class="title">
-            <span>TRX-V{{ item.level }}</span>
+          <div class="title center_d">
+            <div v-if="item.level==1" class="vip_div" id="vip_img1"></div>
+            <div v-if="item.level==2" class="vip_div" id="vip_img2"></div>
+            <div v-if="item.level==3" class="vip_div" id="vip_img3"></div>
+            <div v-if="item.level==4" class="vip_div" id="vip_img4"></div>
+            <div v-if="item.level==5" class="vip_div" id="vip_img5"></div>
+            <div v-if="item.level==6" class="vip_div" id="vip_img6"></div>
+            <span> TRX-V{{ item.level }}</span>
           </div>
 
           <div class="info">
-            <p>{{ item.info }}</p>
+            <p>{{ item.info }} </p>
           </div>
 
           <div class="details">
@@ -202,6 +208,22 @@ export default {
   gap: 1rem;
 }
 
+.center_d{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.vip_div{
+  width: 3em;
+  height: 3em;
+
+}
+#vip_img1{  background: url('@/assets/images/vip1.png') center/contain no-repeat;}
+#vip_img2{  background: url('@/assets/images/vip2.png') center/contain no-repeat;}
+#vip_img3{  background: url('@/assets/images/vip3.png') center/contain no-repeat;}
+#vip_img4{  background: url('@/assets/images/vip4.png') center/contain no-repeat;}
+#vip_img5{  background: url('@/assets/images/vip5.png') center/contain no-repeat;}
+#vip_img6{  background: url('@/assets/images/vip6.png') center/contain no-repeat;}
 .invest .packages .package {
   display: flex;
   flex-direction: column;
