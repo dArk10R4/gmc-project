@@ -53,7 +53,7 @@ const logOut = async () => {
     </div>
 
     <div class="language">
-      <ion-icon name="language-outline"></ion-icon>
+      <ion-icon name="language-outline" class="myicon" ></ion-icon>
       <select v-model="locale">
         <option value="en">{{ translate('English').value }}</option>
         <option value="tr">{{ translate('Turkish').value }}</option>
@@ -83,13 +83,16 @@ header {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  background: url('https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
   align-items: center;
+  background-image: linear-gradient(to top right ,#c5dffe,#c6dfff,#b2d6ff,#beddfe,#b6d9fe,#b8d9ff,#f5f9ff,#f2f9ff,#f2f8fe,#f1f6ff);
+
   border-bottom: 1px solid #fff;
   overflow: scroll;
   width: 100%;
 }
-
+ .myicon{
+  color: #000 !important;
+}
 header .logo {
   height: 100%;
   padding: 0.50rem;
@@ -115,13 +118,11 @@ header .language ion-icon {
 header .language select {
   background: none;
   border: none;
-  color: aliceblue;
+  color: #000;
   font-size: 1rem;
 }
 
-header .language select option {
-  background: black;
-}
+
 
 header .join {
   flex-grow: 1;

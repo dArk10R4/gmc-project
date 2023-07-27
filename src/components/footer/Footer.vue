@@ -13,7 +13,7 @@ const translate = (key) => computed(() => store.translate(key)).value;
 <template>
     <footer>
         <div class="menu">
-            <router-link to="/" class="menu-item">
+            <router-link to="/" class="menu-item ">
                 <ion-icon name="home-outline"></ion-icon>
                 <span>{{ translate('Home').value }}</span>
             </router-link>
@@ -52,8 +52,9 @@ export default {
     display: none;
 }
 
+
 footer {
-    background: url('https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+    background-image: linear-gradient(to  top right ,#c5dffe,#c6dfff,#b2d6ff,#beddfe,#b6d9fe,#b8d9ff,#f5f9ff,#f2f9ff,#f2f8fe,#f1f6ff);
     color: #fff;
     border-top: 1px solid #fff;
     width: 100%;
@@ -77,7 +78,7 @@ footer .menu .menu-item {
     gap: 0.25rem;
     height: 100%;
     padding-top: 0.25rem;
-    color: #fff !important;
+    color: #000 !important;
     text-decoration: none;
 }
 
