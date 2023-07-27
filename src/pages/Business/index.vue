@@ -161,7 +161,8 @@ export default {
 .business {
   margin: 1rem;
   background: #00ccff;
-  background-image: url('@/assets/images/habesli.jpg');
+  /* background-image: url('@/assets/images/habesli.jpg'); */
+  background-image: linear-gradient(to right bottom , #8478aa ,#7948ab,#e6b8e5,#edc7df,#f2c0c8,#f0b38e,#f3999c,#a420ca,#e02ec4,#f167df,#f36ddd,#f172dd,#7b64bb,#f222e1,#f12ad8,#fd3745,#f332c5,#e544b5,#f5a89e,#eeadcb,#fdbbac,#8f6de5,#77b8f7,#347be8,#348eff,#ef3ef6,#c721fe,#e356f0,#af98cf,#a3afc8,#9790c6,#a3c4e6,#5e76e0,#544ed6,#8560c9,#9998ed,#e38cd2,#ad96df,#e2bddf,#ffeffd,#a090b8);
   height: calc(100% - 2rem);
   border-radius: 1.5rem;
   padding: 1rem;
