@@ -77,6 +77,8 @@ main {
     color: black;
     border-radius: 60px;
     background-color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 600;
 }
 .profile .image img{
     width: 180px;

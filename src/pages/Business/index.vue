@@ -4,7 +4,7 @@
       <div class="stats">
         <div class="banner">
           <div class="depozito">
-            <span class="amount">25964</span>
+            <span class="amount"><div class="div_icon"></div>25964</span>
             <span class="unit">TRX</span>
           </div>
 
@@ -188,6 +188,14 @@ export default {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
+}
+.div_icon{
+  display: inline-block;
+  object-fit: contain;
+  width: 15px;
+  height: 15px;
+  margin-right: 3px;
+  background: url('../../assets/icons/trox.png') center/cover ;
 }
 
 .business .stats .banner .depozito {
