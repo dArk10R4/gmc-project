@@ -13,8 +13,8 @@
                         <h3>Wallet Balance</h3>
                     </div>
                     <div class="back card">
-                        <h3>TRX <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png" alt=""> ---</h3>
-                        <span v-if="user" class="num">{{user.balance_f + user.balance_r}}</span>
+                        <h3>TRX <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png" alt=""></h3>
+                        <span v-if="user" class="num">{{(user.balance_f + user.balance_r).toFixed(3)}}</span>
                     </div>
                 </div>
             </div>

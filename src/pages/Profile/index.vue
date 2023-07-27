@@ -30,15 +30,15 @@ import { RouterLink } from 'vue-router'
             </div>
         </div>
         <div class="buttons">
-            <button><RouterLink to="/deposit">Deposit</RouterLink></button>
-            <button><RouterLink to="/withdraw">Withdraw</RouterLink></button>
+            <button class="bg_color"><RouterLink to="/deposit">Deposit</RouterLink></button>
+            <button class="bg_color"><RouterLink to="/withdraw">Withdraw</RouterLink></button>
         </div>
         <div class="wallet" v-if="user">
-            <div class="balance">
+            <div class="balance bg_color">
                 <span>Flexible</span>
                 <span>{{ user.balance_f }} TRX</span>
             </div>
-            <div class="balance">
+            <div class="balance bg_color">
                 <span>Real</span>
                 <span>{{ user.balance_r }} TRX</span>
             </div>
@@ -69,6 +69,7 @@ export default {
 main {
     color: #fff;
 }
+.bg_color{    background: #9ABDDC !important;color: black !important;font-weight: 500!important; }
 .profile{
     width: 90%;
     margin: auto;
