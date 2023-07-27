@@ -184,19 +184,27 @@
                 <div class="companiesdiv" style="display: flex; justify-content: center;
         align-items: center; flex-direction: column; height: 80px; width: 40%;  background-image: url(https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80); border-radius: 20px;">
             <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png" alt="" style="width: 30px;">
-            <h3>birikmis Kar</h3>
-            <p>34788344738</p>
+            <h3 style="font-size:1em">Amount Invested</h3>
+            <p>10.527</p>
         </div>
 
         <div class="companiesdiv" style="display: flex; justify-content: center;
         align-items: center; flex-direction: column; height: 80px; width: 40%;  background-image: url(https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);border-radius: 20px;">
-            <ion-icon name="people-outline"></ion-icon>
-            <h3>uyelik</h3>
-            <p>34788344738</p>
+            <ion-icon name="people-outline" style="font-size: 25px;"></ion-icon>
+            <h3 style="font-size:1em">Uyelik</h3>
+            <p>6786</p>
         </div>
     </div>
-        <div style="color:black;text-align:center;font-weight:700;font-size:1.5em;margin-top:15px">Sponsors</div>
-        <marquee behavior="" direction="" style="height: 60px; background-image: none; background-color: rgb(0, 0, 0);"> <img src="@/assets/images/s1.png" alt="">    <img src="@/assets/images/s3.png" alt=""> <img src="@/assets/images/s3.png" alt=""><img src="@/assets/images/s3.png" alt=""></marquee>
+        <div style="color:black;font-weight:700;font-size:1.5em;margin-top:15px;text-align: center;">Global partners</div>
+        <marquee behavior="" direction="" :autoWidth='True' space="500"
+            style="height: 60px; background-image: none; background-color: rgb(0, 0, 0);">
+             <img src="@/assets/images/s12.png"  alt="">    
+             <img src="@/assets/images/simplex.png"  alt=""> 
+             <img src="@/assets/images/s9.png"  alt="">
+             <img src="@/assets/images/s8.png"  alt="">
+             <img src="@/assets/images/s11.png"  alt="">
+             <img src="@/assets/images/s6.png"  alt="">
+        </marquee>
        <!-- <div class="sponsor">
             <div class="box">
                 <img src="@/assets/images/s1.png" alt="">
@@ -400,7 +408,9 @@ select {
     background-image: url('@/assets/images/habesli.jpg');
 }
 marquee img{
-    width: 80px;
+    /* width: 80px; */
+    height: 40px;
+    margin-right: 10px;
 }
 marquee{
     display: flex;
