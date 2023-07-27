@@ -28,7 +28,7 @@ export default {
             user: null,
             rotation: 0,
             right: 0,
-            slices: ["5", "10", "15", "20", "25", "30", "35", "40"],
+            slices: ["2", "4", "6", "8", "10", "12", "14", "16"],
             colors: ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#00bcd4', '#009688'],
             showSuccessMessage: false,
             successMessage: '',

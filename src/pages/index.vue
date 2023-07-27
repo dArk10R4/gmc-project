@@ -70,7 +70,7 @@
                 </div>
                 <div class="biletolan">
                     <a href="#"><ion-icon name="medical-outline" style="font-size: 40px;"></ion-icon>
-                        <RouterLink to="/profile/ticket">Bilet</RouterLink>
+                        <RouterLink to="/profile/ticket">Ticket</RouterLink>
                     </a>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="wallet2div2">
-                <h3>Normal</h3>
+                <h3>Real</h3>
                 <div class="valet2div2daxili2">
                     <img src="https://cdn-icons-png.flaticon.com/512/3757/3757881.png" alt="">
                     <h3>{{ user.balance_r }} TRON</h3>
@@ -113,14 +113,14 @@
 
                     <div class="content">
                         <ul>
-                            <li><span>22.07.2023'te TronGMC web sitesinin lansmanı</span></li>
-                            <li><span>Şirket Web Sitesinde makinelerin yerleştirilmesi ve düzenlenmesi.</span></li>
-                            <li><span>Şanslı bilet çekilişi bölümünün açılışı</span></li>
-                            <li><span>Spinner (çarx) bölümü</span></li>
-                            <li><span>VIP-6 paketinin açılışı</span></li>
-                            <li><span>VIP-7 paketinin açılışı</span></li>
-                            <li><span>VIP-8 paketinin açılışı</span></li>
-                            <li><span>Yeni çekilişler ve bonus proqramları</span></li>
+                            <li><span>Launch of TronGMC website on 20.07.2023</span></li>
+                            <li><span>Placement and arrangement of machines on the Company Website.</span></li>
+                            <li><span>Opening of the lucky ticket lottery section</span></li>
+                            <li><span>Spinner (charx) section</span></li>
+                            <li><span>Opening of the VIP-6 package</span></li>
+                            <li><span>Opening of the VIP-7 package</span></li>
+                            <li><span>Opening of the VIP-8 package</span></li>
+                            <li><span>New sweepstakes and bonus programs</span></li>
                         </ul>
                     </div>
                 </div>
@@ -142,11 +142,11 @@
 
                     <div class="content">
                         <ul>
-                            <li><span>TronGMC Mobil uygulaması</span></li>
-                            <li><span>PC (Windows, Linux, MAC) gibi sistemlerde TronGMC web sitesinin aktivasyonu.</span></li>
-                            <li><span>VIP-9 paketinin açılışı</span></li>
-                            <li><span>VIP-10 paketinin açılışı</span></li>
-                            <li><span>Web sitemin chat bölümü (bu bölümde şirket kullanıcıları ile dilediğiniz kadar konuşabilir ve keyifli vakit geçirebilirsiniz.)</span></li>
+                            <li><span>TronGMC Mobile application</span></li>
+                            <li><span>Activation of TronGMC website on systems such as PC (Windows, Linux, MAC).</span></li>
+                            <li><span>Opening of the VIP-9 package</span></li>
+                            <li><span>Opening of the VIP-10 package</span></li>
+                            <li><span>Chat section of my website (in this section, you can talk to company users as much as you want and have a pleasant time.)</span></li>
                         </ul>
                     </div>
                 </div>
@@ -168,11 +168,11 @@
 
                     <div class="content">
                         <ul>
-                            <li><span>TronGMC token planı (Burada şirketin kendi tokenı olacak ve bu token sayesinde VIP paketlerden aldıysanız hem tron ​​hem de TGMC (Tron Genesis Mining Cloud Token) kazanacaksınız.</span></li>
-                            <li><span>TronGMC cüzdanı (bu cüzdan ile kendi kripto para birimlerinizi ve TGMC tokenlerinizi saklayabilirsiniz.</span></li>
-                            <li><span>TGMC belirtecinin piyasada listelenmesi</span></li>
-                            <li><span>VIP-11 paketinin açılışı</span></li>
-                            <li><span>VIP-12 paketinin açılışı</span></li>
+                            <li><span>TronGMC token plan (Here, the company will have its own token and if you bought it from VIP packages thanks to this token, you will earn both tron ​​and TGMC (Tron Genesis Mining Cloud Token).)</span></li>
+                            <li><span>TronGMC wallet (with this wallet you can store your own cryptocurrencies and TGMC tokens.)</span></li>
+                            <li><span>Market listing of TGMC token</span></li>
+                            <li><span>Opening of the VIP-11 package</span></li>
+                            <li><span>Opening of the VIP-12 package</span></li>
                         </ul>
                     </div>
                 </div>
@@ -184,7 +184,7 @@
                 <div class="companiesdiv" style="display: flex; justify-content: center;
         align-items: center; flex-direction: column; height: 80px; width: 40%;  background-image: url(https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80); border-radius: 20px;">
             <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png" alt="" style="width: 30px;">
-            <h3 style="font-size:1em">Amount Invested</h3>
+            <h3 style="font-size:1em">Invested</h3>
             <p>10.527</p>
         </div>
 
