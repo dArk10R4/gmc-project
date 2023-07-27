@@ -18,14 +18,14 @@
       </div>
 
       <div class="packages">
-        <div class="package" v-for="(item, index) in packages" :key="index">
+        <div class="package" v-for="(item, index) in packages" :key="index" :class="getClassName(item)">
           <div class="title center_d">
-            <div v-if="item.level==1" class="vip_div" id="vip_img1"></div>
-            <div v-if="item.level==2" class="vip_div" id="vip_img2"></div>
-            <div v-if="item.level==3" class="vip_div" id="vip_img3"></div>
-            <div v-if="item.level==4" class="vip_div" id="vip_img4"></div>
-            <div v-if="item.level==5" class="vip_div" id="vip_img5"></div>
-            <div v-if="item.level==6" class="vip_div" id="vip_img6"></div>
+            <div v-if="item.level==1" class="vip_div " id="vip_img1"></div>
+            <div v-if="item.level==2" class="vip_div " id="vip_img2"></div>
+            <div v-if="item.level==3" class="vip_div " id="vip_img3"></div>
+            <div v-if="item.level==4" class="vip_div " id="vip_img4"></div>
+            <div v-if="item.level==5" class="vip_div " id="vip_img5"></div>
+            <div v-if="item.level==6" class="vip_div " id="vip_img6"></div>
             <span> TRX-V{{ item.level }}</span>
           </div>
 
@@ -133,6 +133,9 @@ export default {
     },
     closePopup() {
       this.isPopupOpen = false;
+    },
+    getClassName(item) {
+      return `vip_div_${item.level}`
     }
   },
   async created() {
@@ -224,6 +227,13 @@ export default {
 #vip_img4{  background: url('@/assets/images/vip4.png') center/contain no-repeat;}
 #vip_img5{  background: url('@/assets/images/vip5.png') center/contain no-repeat;}
 #vip_img6{  background: url('@/assets/images/vip6.png') center/contain no-repeat;}
+
+.vip_div_1{  background-image: linear-gradient(to right,#fcf9d2,#f1f5ce,#e5f1ca,#dfeec8,#d6eac7,#d0e8c6,#d1e8c6,#e6f1c7)!important;;}
+.vip_div_2{  background-image: linear-gradient(to right,#f6f4f7,#f3edf3,#ede5ee,#e3d6e5,#dfd2e2,#d7c3db,#cfbad6,#c6accb,#d1bcd8)!important;;}
+.vip_div_3{  background-image: linear-gradient(to right,#fcf9ee,#fbf0df,#fae6cf,#fbdcba,#f7cfaa,#f7d2b1,#f7d8b8,#f5c7a2,#f9c497,#f7c49b)!important;}
+.vip_div_4{  background-image: linear-gradient(to right,#4f300e,#7b5c24,#6f5119,#926f2a,#b38c2f,#cfa638,#dbb33a,#e4ba3f,#f1c645,#f1c643)!important;;}
+.vip_div_5{  background-image: linear-gradient(to right,#163fcf,#1a3cd0,#3d39b2,#3a38b4,#703388,#603595,#5c3894,#9a2c6b,#9c2d67,#962f6a,#a5305b,#ac2a59,#ab2b59)!important;;}
+.vip_div_6{  background-image: linear-gradient(to right,#fcf9d2,#f1f5ce,#e5f1ca,#dfeec8,#d6eac7,#d0e8c6,#d1e8c6,#e6f1c7)!important;;}
 .invest .packages .package {
   display: flex;
   flex-direction: column;
