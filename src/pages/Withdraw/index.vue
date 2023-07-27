@@ -6,20 +6,23 @@
 					<h1>Withdraw funds</h1>
 				</div>
 				<div class="text">
-					withdrawa aid yazi
+					<p>	Please make sure you enter the correct Tron (TRC20) address, withdrawals will take place within 6 hours.  Withdrawal commission 2%. Minimum Withdrawal is 10 trx, maximum Withdrawal is 100,000 trx.</p>
+					<br>
+					<p id="w_text">(The withdrawal is made between 08:00-20:00.) The transactions you see work with Swedish time (GMT+2).</p>
 				</div>
-				<div class="balanceBox">
+				<div class="balanceBox article_center">
 					<div class="balance">
-						<div class="total">
-							<span>500 TRX</span>
-							<h3>Total funding received</h3>
-						</div>
-					</div>
-					<div class="balance">
-						<div class="total">
-							<span>{{ user.balance_r }} TRX</span>
-							<h3>Withdrawable amount</h3>
-						</div>
+	
+							<div class="total">
+								<div class="article_center">
+									<img src="@/assets//icons//trox.png" id="total_img" alt="">
+									<span>{{ user.balance_r }} TRX</span>
+								</div>
+								
+								<h3>Withdrawable amount</h3>
+							</div>
+		
+
 					</div>
 				</div>
 				<div class="adressWriteBox">
@@ -104,7 +107,21 @@ main {
 
 .text {
 	margin: 20px;
-	font-weight: bold;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;line-height: 1.5em;
+	
+}
+#w_text{
+	color: #ff4548;
+	font-weight: 600;
+}
+#total_img{
+	width: 25px;
+	margin-right: 15px;
+}
+.article_center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .balanceBox {
@@ -112,7 +129,8 @@ main {
 	align-items: center;
 	width: 90%;
 	margin: auto;
-	height: 30vh;
+	padding: 1em;
+	height: 20vh;
 	background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/278/150/small/dark-background-abstract-with-light-effect-vector.jpg');
 	background-size: 100% 100%;
 	background-position: center;
