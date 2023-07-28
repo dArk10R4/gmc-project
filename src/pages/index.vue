@@ -10,7 +10,7 @@
                 <div class="flip-card">
                     <div class="front card" style="border-radius: 30px;">
                         <ion-icon name="accessibility-outline"></ion-icon>
-                        <h3>Wallet Balance</h3>
+                        <h3>{{ translate('home').value[0] }}</h3>
                     </div>
                     <div class="back card">
                         <h3>TRX <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png" alt=""></h3>
@@ -28,35 +28,35 @@
                     <div class="maininterior">
                         <ion-icon name="accessibility-outline"
                             style="background-color: rgb(58, 255, 9); border-radius: 5px; padding: 10px;"></ion-icon>
-                        <RouterLink to="/deposit">Deposit</RouterLink>
+                        <RouterLink to="/deposit">{{ translate('home').value[1] }}</RouterLink>
                     </div>
                     <div class="maininterior">
                         <ion-icon name="accessibility-outline"
                             style="background-color: rgb(194, 0, 0); border-radius: 5px; padding: 10px;"></ion-icon>
-                        <RouterLink to="/withdraw">Withdraw</RouterLink>
+                        <RouterLink to="/withdraw">{{ translate('home').value[2] }}</RouterLink>
                     </div>
                     <div class="maininterior">
                         <ion-icon name="accessibility-outline"
                             style="background-color: rgb(217, 255, 0); border-radius: 5px; padding: 10px;"></ion-icon>
-                        <RouterLink to="/reference">Reference</RouterLink>
+                        <RouterLink to="/reference">{{ translate('home').value[3] }}</RouterLink>
                     </div>
                 </div>
                 <div class="main2">
                     <div class="maininterior">
                         <ion-icon name="accessibility-outline"
                             style="background-color: rgb(194, 0, 184); border-radius: 5px; padding: 10px;"></ion-icon>
-                        <RouterLink to="/about">About</RouterLink>
+                        <RouterLink to="/about">{{ translate('home').value[4] }}</RouterLink>
                     </div>
                     <div class="maininterior">
                         <ion-icon name="accessibility-outline"
                             style="background-color: rgb(92, 92, 92); border-radius: 5px; padding: 10px;"></ion-icon>
-                        <RouterLink to="/settings">Settings</RouterLink>
+                        <RouterLink to="/settings">{{ translate('home').value[5] }}</RouterLink>
                     </div>
                     <div class="maininterior">
                         <ion-icon name="accessibility-outline"
                             style="background-color: rgb(0, 181, 194); border-radius: 5px; padding: 10px;"></ion-icon>
                         <!--<RouterLink to="/support">Support</RouterLink>-->
-                        <a href="https://t.me/+24Hg5OYpZk9mMWQx">Support</a>
+                        <a href="https://t.me/+24Hg5OYpZk9mMWQx">{{ translate('home').value[6] }}</a>
                     </div>
                 </div>
             </div>
@@ -65,12 +65,12 @@
             <div class="carkdivi">
                 <div class="carxolan">
                     <a href="#"><ion-icon name="medical-outline" style="font-size: 40px;"></ion-icon>
-                        <RouterLink to="/lucky">Lucky Draw</RouterLink>
+                        <RouterLink to="/lucky">{{ translate('home').value[7] }}</RouterLink>
                     </a>
                 </div>
                 <div class="biletolan">
                     <a href="#"><ion-icon name="medical-outline" style="font-size: 40px;"></ion-icon>
-                        <RouterLink to="/profile/ticket">Ticket</RouterLink>
+                        <RouterLink to="/profile/ticket">{{ translate('home').value[8] }}</RouterLink>
                     </a>
                 </div>
             </div>
@@ -78,14 +78,14 @@
 
         <div v-if="user" class="wallet2">
             <div class="wallet2div1">
-                <h3>Promotion</h3>
+                <h3>{{ translate('home').value[9] }}</h3>
                 <div class="valet2div2daxili2">
                     <img src="https://cdn-icons-png.flaticon.com/512/3757/3757881.png" alt="">
                     <h3>{{ user.balance_f }} TRON</h3>
                 </div>
             </div>
             <div class="wallet2div2">
-                <h3>Real</h3>
+                <h3>{{ translate('home').value[10] }}</h3>
                 <div class="valet2div2daxili2">
                     <img src="https://cdn-icons-png.flaticon.com/512/3757/3757881.png" alt="">
                     <h3>{{ user.balance_r }} TRON</h3>
@@ -94,7 +94,7 @@
         </div>
 
         <div class="roadmap">
-            <h2 style="color: black;">ROADMAP</h2>
+            <h2 style="color: black;">{{ translate('home').value[11] }}</h2>
 
             <div class="timeline">
                 <div class="time">
@@ -113,14 +113,14 @@
 
                     <div class="content">
                         <ul>
-                            <li><span>Launch of TronGMC website on 20.07.2023</span></li>
-                            <li><span>Placement and arrangement of machines on the Company Website.</span></li>
-                            <li><span>Opening of the lucky ticket lottery section</span></li>
-                            <li><span>Spinner (charx) section</span></li>
-                            <li><span>Opening of the VIP-6 package</span></li>
-                            <li><span>Opening of the VIP-7 package</span></li>
-                            <li><span>Opening of the VIP-8 package</span></li>
-                            <li><span>New sweepstakes and bonus programs</span></li>
+                            <li><span>{{ translate('home').value[12] }}</span></li>
+                            <li><span>{{ translate('home').value[13] }}</span></li>
+                            <li><span>{{ translate('home').value[14] }}</span></li>
+                            <li><span>{{ translate('home').value[15] }}</span></li>
+                            <li><span>{{ translate('home').value[16] }}</span></li>
+                            <li><span>{{ translate('home').value[17] }}</span></li>
+                            <li><span>{{ translate('home').value[18] }}</span></li>
+                            <li><span>{{ translate('home').value[19] }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -142,11 +142,11 @@
 
                     <div class="content">
                         <ul>
-                            <li><span>TronGMC Mobile application</span></li>
-                            <li><span>Activation of TronGMC website on systems such as PC (Windows, Linux, MAC).</span></li>
-                            <li><span>Opening of the VIP-9 package</span></li>
-                            <li><span>Opening of the VIP-10 package</span></li>
-                            <li><span>Chat section of my website (in this section, you can talk to company users as much as you want and have a pleasant time.)</span></li>
+                            <li><span>{{ translate('home').value[20] }}</span></li>
+                            <li><span>{{ translate('home').value[21] }}</span></li>
+                            <li><span>{{ translate('home').value[22] }}</span></li>
+                            <li><span>{{ translate('home').value[23] }}</span></li>
+                            <li><span>{{ translate('home').value[24] }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -168,11 +168,11 @@
 
                     <div class="content">
                         <ul>
-                            <li><span>TronGMC token plan (Here, the company will have its own token and if you bought it from VIP packages thanks to this token, you will earn both tron ​​and TGMC (Tron Genesis Mining Cloud Token).)</span></li>
-                            <li><span>TronGMC wallet (with this wallet you can store your own cryptocurrencies and TGMC tokens.)</span></li>
-                            <li><span>Market listing of TGMC token</span></li>
-                            <li><span>Opening of the VIP-11 package</span></li>
-                            <li><span>Opening of the VIP-12 package</span></li>
+                            <li><span>{{ translate('home').value[25] }}</span></li>
+                            <li><span>{{ translate('home').value[26] }}</span></li>
+                            <li><span>{{ translate('home').value[27] }}</span></li>
+                            <li><span>{{ translate('home').value[28] }}</span></li>
+                            <li><span>{{ translate('home').value[29] }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -184,18 +184,18 @@
                 <div class="companiesdiv" style="display: flex; justify-content: center;
         align-items: center; flex-direction: column; height: 80px; width: 40%;  background-image: url(https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80); border-radius: 20px;">
             <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png" alt="" style="width: 30px;">
-            <h3 style="font-size:1em">Invested</h3>
+            <h3 style="font-size:1em">{{ translate('home').value[30] }}</h3>
             <p>10.527</p>
         </div>
 
         <div class="companiesdiv" style="display: flex; justify-content: center;
         align-items: center; flex-direction: column; height: 80px; width: 40%;  background-image: url(https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);border-radius: 20px;">
             <ion-icon name="people-outline" style="font-size: 25px;"></ion-icon>
-            <h3 style="font-size:1em">Uyelik</h3>
+            <h3 style="font-size:1em">{{ translate('home').value[31] }}</h3>
             <p>6786</p>
         </div>
     </div>
-        <div style="color:black;font-weight:700;font-size:1.5em;margin-top:15px;text-align: center;">Global partners</div>
+        <div style="color:black;font-weight:700;font-size:1.5em;margin-top:15px;text-align: center;">{{ translate('home').value[32] }}</div>
         <marquee behavior="" direction="" :autoWidth='True' space="500"
             style="height: 60px; background-image: none; background-color: rgb(0, 0, 0);">
              <img src="@/assets/images/s12.png"  alt="">    
@@ -259,11 +259,27 @@
 <script>
 import { useUserStore } from '@/stores/UserStore'
 import { RouterLink } from 'vue-router';
-
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
 export default {
+    setup() {
+    const store = useLocaleStore();
+
+    // Initialize locale
+    onMounted(() => {
+      store.initializeLocale();
+    });
+
+    const translate = (key) => computed(() => store.translate(key)).value;
+
+    return {
+      translate,
+    };
+  },
     data() {
         return {
-            user: null
+            user: null,
+           
         }
     },
     components: {
@@ -273,7 +289,9 @@ export default {
         const userStore = useUserStore()
         await userStore.fill()
         this.user = userStore.user
-    }
+    },
+
+    
 }
 </script>
 <style scoped>
