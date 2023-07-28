@@ -25,4 +25,7 @@ export default {
   async changePhone(params) {
     return await axiosIns.post('user/change/phone', params)
   },
+  async transfer(params) {
+    return await axiosIns.post('user/transfer',params)
+  }
 }

@@ -49,15 +49,15 @@
       <div class="addres" style="width: 90%; margin: auto;">
         <div class="addresBox">
           <div class="depositheader" style="margin-top: 50px;">
-            <p class="text-color">Deposit Addres</p>
+            <p class="text-color">Deposit Addres (Tron(TRC20))</p>
           </div>
           <div class="copyAddres">
             <div>
-              <p>839479834738783478</p>
+              <p style="font-size:12px;">TFkWxysMfnDE2zJKwWnTxAzfxuhSRfptGn</p>
             </div>
 
             <div>
-              <button>Copy</button>
+              <button ref='copyButton' @click="copy">Copy</button>
             </div>
           </div>
         </div>
@@ -91,6 +91,19 @@ export default {
     }
   },
   methods: {
+    async copy(){
+      try {
+        await navigator.clipboard.writeText('TFkWxysMfnDE2zJKwWnTxAzfxuhSRfptGn');
+        this.$refs.copyButton.innerText = "copied";
+        this.$refs.copyButton.disabled = true;
+        setTimeout(()=>{
+          this.$refs.copyButton.innerText = "copy";
+        this.$refs.copyButton.disabled = false;
+        },2000)
+      } catch (e) {
+        console.log(e)
+      }
+    },
     makeDeposit() {
       this.depositAvaliable = !this.depositAvaliable
       console.log(this.amount)

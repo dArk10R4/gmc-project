@@ -24,7 +24,9 @@ main {
   grid-area: 2 / 1 / 3 / 2;
   overflow: scroll;
   /* background: url('@/assets/images/11.jpg'); */
-  background: linear-gradient(0.25turn, #F9F295, #faf398, #B88A44);
+  /* background: linear-gradient(0.25turn, #F9F295, #faf398, #B88A44);
+   */
+   background-color: #fff;
   background-size: 100% 100%;
   position: relative;
   color: #fff;

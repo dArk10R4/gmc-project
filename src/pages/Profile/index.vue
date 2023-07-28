@@ -15,7 +15,7 @@ import { RouterLink } from 'vue-router'
             <div class="stats">
                 <div class="stat">
                     <span>Invest</span>
-                    <span>12</span>
+                    <span>{{ totalPackages }}</span>
                 </div>
 
                 <div class="stat">
@@ -25,7 +25,7 @@ import { RouterLink } from 'vue-router'
 
                 <div class="stat">
                     <span>On Invest</span>
-                    <span>1440 TRX</span>
+                    <span>{{ totalMoney }} TRX</span>
                 </div>
             </div>
         </div>
@@ -43,24 +43,69 @@ import { RouterLink } from 'vue-router'
                 <span>{{ user.balance_r }} TRX</span>
             </div>
         </div>
+        <div style="text-align: center;">
+
+            <button @click="transferMoney" class="transferbutton">Transfer between balances</button>
+        </div>
+        <div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
+        <div class="error-message" v-if="showErrorMessage">{{ errorMessage }}</div>
     </main>
 </template>
 
 <script>
 import { useUserStore } from '@/stores/UserStore'
-
+import UserService from '../../services/UserService';
+import PackageService from '@/services/PackageService';
 export default {
   data() {
     return {
-      user: null
+        user: null,
+        showSuccessMessage: false,
+        successMessage: '',
+        showErrorMessage: false,
+        errorMessage: '',
+        totalPackages: 0,
+        totalMoney: 0,
+        activePackages : null
     }
   },
+  methods:{
+    async transferMoney(){
+       try {
+            const response = await UserService.transfer({});
+            this.successMessage = 'Transfer succesfull';
+            this.showSuccessMessage= true;
+            setTimeout(() => {
+                    // 5 saniye sonra başarılı mesajını kapat
+                    this.showSuccessMessage = false;
+                }, 5000);
+        } catch (error) {
+            if (error.response.status === 400) {
+                    this.errorMessage = error.response.data['error']
+                    this.showErrorMessage = true;
 
+                    setTimeout(() => {
+                        // 5 saniye sonra başarılı mesajını kapat
+                        this.showErrorMessage = false;
+                    }, 5000);
+                }
+        }
+        const userStore = useUserStore()
+        await userStore.fill()
+        this.user = userStore.user
+
+    }
+  },
   async created() {
     const userStore = useUserStore()
       await userStore.fill()
       this.user = userStore.user
       console.log(this.user)
+      this.activePackages = (await PackageService.active_packages()).data
+      this.totalPackages = Object.keys(this.activePackages).length
+      Object.values(this.activePackages).forEach(item => {
+      this.totalMoney += item.package.price;
+    });
   }
 }
 </script>
@@ -69,6 +114,26 @@ export default {
 main {
     color: #fff;
 }
+
+.transferbutton{
+    border : none;
+    padding: 15px 10px;
+    margin:20px ;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgb(94, 94, 206);
+
+}
+.transferbutton:hover{
+    background-color: rgb(155, 155, 228);
+}
+.transferbutton:active{
+    background-color: blue;
+    color: white
+}
+
 .bg_color{    background: #9ABDDC !important;color: black !important;font-weight: 500!important; }
 .profile{
     width: 90%;
@@ -144,5 +209,35 @@ main {
     color: white;
     border-radius: 5px;
     margin-top: 20px;
+}
+
+
+.success-message {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 25%;
+  width: 50%;
+  height: 3rem;
+  background: rgba(172, 255, 47, 0.747);
+  border-radius: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-message {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 25%;
+  width: 50%;
+  height: 3rem;
+  background: rgba(255, 47, 47, 0.747);
+  color: #fff;
+  border-radius: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
