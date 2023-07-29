@@ -6,38 +6,36 @@
                     <img src="../../assets/images/v-invest.png" alt="">
                 </div>
                 <div class="about">
-                    <p>"Yatırım yaparak kazanç elde etmenin keyifli dünyasına adım atın ve finansal geleceğinizi
-                        şekillendirin. Sizi bekleyen fırsatları keşfetmek ve yatırımlarınızı en verimli şekilde
-                        değerlendirmek için buradayız."</p>
+                    <p>{{ translate('login').value[0] }}</p>
                 </div>
             </div>
             <div class="login-form">
-                <h2>Welcome Again</h2>
+                <h2>{{ translate('login').value[1] }}</h2>
 
                 <form @submit.prevent="login">
                     <div class="input-field">
-                        <label for="username"><span>Username</span></label>
+                        <label for="username"><span>{{ translate('login').value[2] }}</span></label>
                         <div class="input">
                             <ion-icon name="person-outline"></ion-icon>
-                            <input type="text" v-model="username" placeholder="Enter your username!">
+                            <input type="text" v-model="username" :placeholder="translate('login').value[4]">
                             <p class="error" v-if="errorMessages.password">{{ errorMessages.password }}</p>
                         </div>
                     </div>
 
                     <div class="input-field">
-                        <label for="password"><span>Password</span></label>
+                        <label for="password"><span>{{ translate('login').value[3] }}</span></label>
                         <div class="input">
                             <ion-icon name="key-outline"></ion-icon>
-                            <input type="password" v-model="password" placeholder="Enter your password!">
+                            <input type="password" v-model="password" :placeholder="translate('login').value[5]">
                             <p class="error" v-if="errorMessages.password">{{ errorMessages.password }}</p>
                         </div>
                     </div>
 
-                    <button>Log In</button>
+                    <button>{{ translate('login').value[6] }}</button>
 
                     <div class="register">
-                        <span>Don't have an account?</span><router-link to="/auth/signup"><span
-                                class="link">Register</span></router-link>
+                        <span>{{ translate('login').value[7] }}</span><router-link to="/auth/signup"><span
+                                class="link">{{ translate('login').value[8] }}</span></router-link>
                     </div>
                 </form>
             </div>
@@ -47,8 +45,24 @@
 
 <script>
 import { useAuthStore } from '@/stores/AuthStore'
+import { useLocaleStore } from '@/stores/LocaleStore'; 
+import { computed, onMounted } from 'vue';
 
 export default {
+    setup() { 
+    const store = useLocaleStore(); 
+ 
+    // Initialize locale 
+    onMounted(() => { 
+      store.initializeLocale(); 
+    }); 
+ 
+    const translate = (key) => computed(() => store.translate(key)).value; 
+ 
+    return { 
+      translate, 
+    }; 
+  },
     data() {
         return {
             username: '',

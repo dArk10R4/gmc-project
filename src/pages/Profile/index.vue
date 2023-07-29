@@ -141,7 +141,8 @@ main {
     margin-top: 20px;
     color: black;
     border-radius: 60px;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+    background-color: silver;
     font-family: Arial, Helvetica, sans-serif !important;
     font-weight: 600;
 }

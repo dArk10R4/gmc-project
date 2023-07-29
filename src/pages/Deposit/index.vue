@@ -29,10 +29,10 @@
       <div class="deposit_modal" v-if="depositAvaliable">
         <div class="deposit">
           <h2>Make Deposit</h2>
-          <form @submit.prevent="payDeposit">
+          <form @submit.prevent="sendDepositRequest">
             <div class="form-item">
               <label for="amount"><span> Amount</span></label>
-              <input type="number" v-model.number="amount" min="0">
+              <input ref="amountInput" type="number" v-model.number="amount" min="10">
             </div>
 
             <button type="submit">Pay</button>
@@ -65,7 +65,7 @@
       <!-- deposit addres end -->
       <div class="img-send text-div">
         <label for="img-send"><span style="color: black;">Send Decont: </span></label>
-        <input type="file" class="text-color">
+        <input type="file" ref="image" class="text-color">
       </div>
       <br><br>
       <div class="text-div">
@@ -75,19 +75,40 @@
       </div>
     </div>
     <!-- deposit end -->
-
+        <div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
+        <div class="error-message" v-if="showErrorMessage">{{ errorMessage }}</div>
   </main>
 </template>
 <script>
 import { useUserStore } from '@/stores/UserStore'
-import { ethers, isError } from 'ethers'
-
+import { ethers, isError } from 'ethers';
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
+import PaymentService from '@/services/PaymentService'
 export default {
+  setup() {
+    const store = useLocaleStore();
+
+    // Initialize locale
+    onMounted(() => {
+      store.initializeLocale();
+    });
+
+    const translate = (key) => computed(() => store.translate(key)).value;
+
+    return {
+      translate,
+    };
+  },
   data() {
     return {
       user: null,
-      amount: 0,
-      depositAvaliable: false
+      amount: 10,
+      depositAvaliable: false,
+      showSuccessMessage: false,
+      successMessage: '',
+      showErrorMessage: false,
+      errorMessage: '',
     }
   },
   methods: {
@@ -136,6 +157,53 @@ export default {
       } catch (error) {
         console.log(error)
       }
+      },
+      async sendDepositRequest() {
+        const allowedFormats = ['image/jpeg', 'image/jpg', 'image/png'];
+        let imageInput = this.$refs.image;
+        this.amount
+
+        if (this.amount<10) {
+          return;
+
+        }
+        console.log(imageInput.files.length)
+        console.log(!((imageInput.files.length)>0 && allowedFormats.includes(imageInput.files[0].type)))
+        if (!((imageInput.files.length)>0 && allowedFormats.includes(imageInput.files[0].type))) {
+
+
+          this.errorMessage =this.translate('deposit').value[0] ;
+          this.showErrorMessage = true;
+
+          setTimeout(() => {
+              // 5 saniye sonra başarılı mesajını kapat
+              this.showErrorMessage = false;
+          }, 5000);
+          return
+        }
+        const formData = new FormData();
+        formData.append('image',imageInput.files[0]);
+        formData.append('amount',this.amount);
+        try {
+				  const data = (await PaymentService.deposit(formData)).data;
+          this.successMessage = data.message
+            this.showSuccessMessage = true;
+
+            setTimeout(() => {
+              // 5 saniye sonra başarılı mesajını kapat
+              this.showSuccessMessage = false;
+            }, 5000);
+        } catch (error) {
+          if (error.response.status === 400) {
+            this.errorMessage = error.response.data.error
+            this.showErrorMessage = true;
+
+            setTimeout(() => {
+              // 5 saniye sonra başarılı mesajını kapat
+              this.showErrorMessage = false;
+            }, 5000);
+          }
+        }
       }
     },
     async created() {
@@ -227,7 +295,33 @@ main {
   background: #222;
   border-radius: 15px;
 }
-
+.success-message {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 25%;
+  width: 50%;
+  height: 3rem;
+  background: rgba(72, 107, 18, 0.747);
+  border-radius: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error-message {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 25%;
+  width: 50%;
+  height: 3rem;
+  background: rgba(255, 47, 47, 0.747);
+  color: #fff;
+  border-radius: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .depositheader {
   display: flex;
   justify-content: center;

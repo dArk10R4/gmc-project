@@ -705,11 +705,12 @@ marquee {
 }
 
 .roadmap .timeline .content {
-    background: #fff;
+    background-color: silver;
     color: #000;
     border-radius: 1.5rem;
     padding: 1rem;
     opacity: 0.7;
+    font-weight: 500;
 }
 
 .roadmap .timeline .content ul {

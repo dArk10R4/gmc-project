@@ -19,8 +19,9 @@
             </div>
 
             <div class="table-row" v-for="(item, index) in refList" :key="index">
+            
                 <div class="table-cell first-cell">
-                    <p>{{ item.username }}</p>
+                    <p>{{(index + 1)}}.  {{ item.username }}</p>
                 </div>
                 <div class="table-cell">
                     <p>{{ item.email }}</p>
@@ -35,40 +36,60 @@
         </div>
 
         <div class="popup" v-if="isPopupOpen">
-            <div class="content">
-                <h2>{{ username }} kişisine para göndermek istiyor musun?</h2>
-                <div class="info">
-                    <input type="number" placeholder="Tutarı Girin!">
+            <form @submit.prevent="sendMoney">
+                <div class="content" >
+                    <h2>{{ username }} kişisine para göndermek istiyor musun?</h2>
+                    <div class="info" >
+                        <input type="number" ref="amount" min="0" placeholder="Tutarı Girin!">
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" >Evet</button>
+                        <button type="button" @click="closePopup">Hayır</button>
+                    </div>
                 </div>
-                <div class="buttons">
-                    <button>Evet</button>
-                    <button @click="closePopup">Hayır</button>
-                </div>
-            </div>
+            </form>
         </div>
     </main>
 </template>
 
 <script>
-import UserService from '@/services/UserService'
+import UserService from '@/services/UserService';
 
 export default {
     data() {
         return {
             references: null,
             isPopupOpen: false,
-            username: ''
+            username: '',
+            currentItem: null
         }
     },
     methods: {
-        async openPopup(id) {
+        async openPopup(user) {
+            this.username = user.username;
             this.isPopupOpen = true
-            console.log(id, "Naber")
+            this.currentItem = user;
+            console.log(user, "Naber")
             console.log(this.references)
         },
         closePopup() {
+            this.username = '';
+            this.currentItem = null;
             this.isPopupOpen = false;
         },
+        async sendMoney (){
+            console.log(this.currentItem);
+            let amount = this.$refs.amount;
+            try {
+                let data = UserService.sendToRef({
+                    amount :amount,
+                    friend_id: currentItem.id
+                });
+
+            } catch(e) {
+                console.log(e)
+            }
+        }
     },
     async created() {
         try {

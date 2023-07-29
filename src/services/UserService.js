@@ -27,5 +27,8 @@ export default {
   },
   async transfer(params) {
     return await axiosIns.post('user/transfer',params)
+  },
+  async sendToRef(params) {
+    return await axiosIns.post('user/sendtoref',params)
   }
 }

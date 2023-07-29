@@ -54,5 +54,9 @@
         "6":"Giriş",
         "7":"Hesabınız yok mu?",
         "8":"Kayıt olun"
+    },
+    "deposit": {
+        "0":"İzin verilen biçimler jpg/jpeg/png"
     }
+
 }
