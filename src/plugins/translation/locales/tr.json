@@ -55,8 +55,123 @@
         "7":"Hesabınız yok mu?",
         "8":"Kayıt olun"
     },
-    "deposit": {
+    "Deposit": {
         "0":"İzin verilen biçimler jpg/jpeg/png"
-    }
+    },
+    "business":{
+        "0": "Kopya Referal URL",
+        "1": "Yeni Makine Al",
+        "2": "gün",
+        "3": "Aktif paketler",
+        "4": "Paket Ismi",
+        "5": "Derece",
+        "6": "Kazanc",
+        "7": "Pasif paketler"
+    },
+    "invest": {
+        "0": "Kendi Makinen seç!",
+        "1": "ÖNEMLİ!!!",
+        "2": "Makinenizi seçmeden önce,yatırım yaptıktan sonra kazandığınız tutarın,makinenin temsil ettiği zamanda sona erdiğinde hesabınıza yansıdığını bilmeniz gerektir",
+        "3": "Zaman",
+        "4": "Kazanmak",
+        "5": "Maks",
+        "6": "Çark"
+    
+    },
+    "reference": {
+        "0": "Referal Seviyyesi 1",
+        "1": "Isim",
+        "2": "E-posta",
+        "3": "Aktif",
+        "4": "Gönder",
+        "5": "Para göndermek istiyor musun?",
+        "6": "Tutarı Girin", 
+        "7": "Evet",
+        "8": "Hayır"
+    },
+    "profile": {
+        "0": "Depozito",
+        "1": "Para çekimi",
+        "2": "Değişken", 
+        "3": "Hakiki bakiye",
+        "4": "Bakiyeler arasında aktarma yap"
+    },
+    "deposit": {
+        "0": "Depozito para birimi",
+        "1": "Cüzdan",
+        "2": "Depozito yapmak", 
+        "3": "Miktar",
+        "4": "Öde",
+        "5": "Minimum Depozito 10 trx, maksimum depozito 100.000 trx'tir.",
+        "6": "Yatırım yapmak için tron (trc20) adresini kopyalayıp gönderin. sonra ispat için çekini bize gönderin. 1-2 saat içerisinde yatırımınız yatırılacaktır.",
+        "7": "( Para yatırma işlemi 08:00 ile 20:00 saatleri arasında yapılmaktadır.) Gördüğünüz işlemler İsveç saati (GMT+2) ile çalışmaktadır."
+    },
+    "Withdraw": {
+        "0": "Para çekme",
+        "1": "Lütfen doğru Tron (TRC20) adresini girdiğinizden emin olun, para çekme işlemleri 6 saat içinde gerçekleşecektir. Para çekme komisyonu %2. Minimum Para Çekme 10 trx, maksimum Para Çekme 100.000 trx'tir.",
+        "2": "(Çekim 08:00-20:00 saatleri arasında yapılmaktadır.) Gördüğünüz işlemler İsveç saati (GMT+2) ile çalışmaktadır.",
+        "3": "Çekilebilen miktar",
+        "4": "Adresini yaz",
+        "5": "Para çekme"
+    },
+    "about": {
+        "0": "TronGMC'de ortak olmak için nasıl olunur?",
+        "1": "Şirketimizin ortağı olmak için sunduğumuz paketlerden birini kiralamalısınız. Böylece Tron Blockchain'i destekler ve şirketimizin ortağı olursunuz.",
+        "2": "Şirkete kaydolduktan sonra ne olmalı?",
+        "3": "Şirketimize kaydolduktan sonra, sunduğumuz VIP paketlerinin bir üyesi olmanız gerekir. Bir üye bulunduğunda, makineler kiralanır, kazançlar çevrimiçi olarak korunur ve bakiyenize yansıtılır.",
+        "4": "Kiralanan makineler ödediğiniz tutara göre çalışır ve kar sağlanır.",
+        "5": "Hesabımdan para çekmek istiyorum, nasıl yapabilirim?",
+        "6": "Hesaplar bölümüne gidin ve \"Çekim\" bölümünü çalıştırın. ve trx adresini girin. Vurmak istediğiniz sınırları girin ve vurun.",
+        "7": "Minimum çekim tutarı 10 trx, minimum birikim tutarı 20 trx'dir.",
+        "8": "Parayı sadece günde bir kez çekebilirsiniz. Çekim ve yatırım saatleri 08:00 ve 20:00 (İsveç saati) olarak belirlenmiştir.",
+        "9": "Hangi para birimleriyle yatırım yapabilirim?",
+        "10": "Sadece TRX (TRC20). Çünkü Tron şirketi ile bir anlaşmamız var ve sadece Tron kabul ediyoruz. Bu, Tron Blockchain'i desteklemek ve Tron üzerinde bir hacim oluşturmak içindir.",
+        "11": "VIP paketlerinin seviyesi nedir?",
+        "12": "Her VIP paketi farklı cihazlar ve farklı hash oranlarına sahiptir. VIP1 satın alarak minimum güç tüketiminizi kiralıyorsunuz ve zayıf hash oranınızı günlük %7 artırıyorsunuz. Ancak VIP 5 satın alarak daha yüksek bir faiz oranı elde edersiniz, bu da adil bir durumdur.",
+        "13": "Parayı çektim ama henüz gelmedi, neden?",
+        "14": "Çekim süresinde gecikmeler olabilir. Bunun nedeni, daha fazla kişiye ait bir şirketle kayıtlı olmasıdır. Böyle bir durumda, lütfen destek hattımıza metin mesajı gönderin.",
+        "15": "Sadece TRX çekimleri için kullanılır.",
+        "16": "İşlemleriniz kaydedilir ve onları görebilirsiniz.",
+        "17": "Eğer şifremi unuttuysam nasıl öğrenebilirim veya değiştirebilirim?",
+        "18": "Şifreyi değiştirmek isterseniz, \"Hesaplar\" bölümünde \"Şifre Değiştir\"i kullanarak önceki şifrenizi girip yeni şifrenizi yeniden girerek şifrenizi güncelleyebilirsiniz.",
+        "19": "Para nasıl yatırılır?",
+        "20": "Hesabınıza fon eklemek istiyorsanız, \"Profil\" sekmesine gidin ve depozitoyu seçin. ardından TRX (TRC20) seçin ve yatırmak istediğiniz miktarı seçin. (minimum depozito 10 trx. Komisyon %2) TRX miktarı kaydedildikten sonra bakiyenize aktarılacaktır.",
+        "21": "VIP paketlerinden ne kadar kazanabilirim?",
+        "22": "VIP-1=10 satın alma hakkı,",
+        "23": "VIP-2=50 satın alma hakkı,",
+        "24": "VIP-3=100 satın alma hakkı,",
+        "25": "VIP-4=500 satın alma hakkı,",
+        "26": "VIP-5=1000 satın alma hakkı. Paketleri burada sınırlıyoruz çünkü makineler sınırlıdır. Şirketimiz büyüdükçe daha fazla makine seçebilirsiniz. Diğer paketler geldikçe gösterge paneli güncellenecektir. Aşağıda belirtilen kurallara uymayı nazikçe istirham ediyoruz. Aksi takdirde hesabınız bloke edilecektir.",
+        "27": "Aynı IP adresinden birden fazla hesap açma,",
+        "28": "Başkasının hesabına müdahale etme, hesaplarını hackleme ve şifrelerini değiştirme.",
+        "29": "BOT, Hesapta Program kullanma",
+        "30": "Kullanıcı hesaplarına giriş yapma veya kullanıcılara hesaplarını devralma isteme.",
+        "31": "Moderatörlere saygısızlık ve hakaret etme. Bu kurallar şirketimiz için önemli ve temel kurallardır. Kullanıcılarımızı önemsiyor ve seviyoruz. Sorularım var, bu soruların cevaplarını nerede bulabilirim?",
+        "32": "Sorularınız varsa, yukarıdaki \"Destek\" bölümündeki bağlantıya gidin ve sorularınızı moderatörlere yazın. İlgili sorularınıza cevap verecekler. Dönen tekerlek sistemi ve VIP paketleri",
+        "33": "VIP-1= 7 gün ve %7 kazanç. 1 dönen çark hediyesi.",
+        "34": "VIP-2=10 gün ve %8 kazanç. 3 dönen çark hediyesi.",
+        "35": "VIP-3= 15 gün ve %10 kazanç. 6 dönen çark hediyesi.",
+        "36": "VIP-4= 20 gün ve %11 kar. 10 dönen çark, 50 tron hediyesi.",
+        "37": "VIP-5=25 gün ve %12 kazanç. 20 dönen çark, 250 trx hediyesi. \"DÖNEN ÇARKI DÖNDÜR\" bölümü, eğlence için oluşturulmuş bir bonus sistemdir. Kullanıcılarımız bu tekerleği kullanarak ek gelir elde edebilirler. Tekerlek rastgele döner. Tron Genesis Mining Cloud resmi olarak Justin Sun tarafından lisanslanmıştır. Bu lisans için Justin Sun'a minnettarız.",
+        "38": "Promosyon Ödül sistemi",
+        "39": "Arkadaşlarınızı Tron GMC'ye davet ederek ek ödüller kazanabilirsiniz. 1. Davet için %10, 2. Davet için %5, 3. Davet için %3 kazanırsınız.",
+        "40": "Örneğin, A adlı bir davetli B'yi davet eder ve A, B'nin yatırımının %10'unu alır. Eğer B gider ve C'yi davet ederse, bu sefer A C'nin yatırımının %5'ini alır. Eğer C kişi D kişisini davet ederse, bu kez A kişi yatırım tutarının %3'ünü kazanır.",
+        "41": "Bir ekip oluşturmak için \"Arkadaşlarla paylaş\" bağlantısını kopyalayın ve arkadaşlarınıza gönderin. Arkadaşlarınız kaydolur ve VIP paketini satın aldığında, promosyon ödülü otomatik olarak bakiyenize yansıtılır.",
+        "42": "Şirkete kişileri yönlendirerek daha fazla gelir elde edersiniz. Aynı zamanda şirketi desteklersiniz. Bu desteğe karşılık olarak belirli bonuslar alırsınız. TRONGMC olarak en iyi dileklerimizi, sevgimizi ve saygımızı gönderiyoruz.",
+        "43": "Şanslı Bilet çekilişleri",
+        "44": "Bu çekilişler TronGMC tarafından uygulanan ve kullanıcılar tarafından hoş karşılanan yeni bir yöntemdir. Buradan bilet satın alabilir ve kazanma şansınızı artırabilirsiniz. İlk 3 rastgele seçilen katılımcı, bilet sayısı ve yönlendirmelerin sayısı dikkate alınarak ödüller kazanır. (Her çekilişte ödüller farklı olacaktır.) Bilet fiyatı 5 trx.",
+        "45": "Şirketin Resmi Bilgileri",
+        "46": "Resmi web sitesi",
+        "47": "Resmi Telegram kanalı",
+        "48": "Resmi Telegram grubu",
+        "49": "Şirket adresi: İsveç'te kurulan TOPSECRET şirketi.",
+        "50": "Tron Genesis Mining Cloud resmi olarak Justin Sun tarafından lisanslanmıştır. Bu lisans için Justin Sun'a minnettarız.",
+        "51": "TRON GENESIS MINING CLOUD ŞİRKETİ HAKKINDA",
+        "52": "Tron Genesis Mining Cloud şirketi, 05.10.2021 tarihinde İşvecre'de kurulan Tron madencilik şirketidir. Şirketimizin amacı, Tron blockchain üzerindeki Gwei ücretini en aza indirmektir. Bunun için yoğun çaba harcıyoruz. Kısacası, TRONGMC şirketi yepyeni bir planı hayata geçiriyor! Şirketimizin çevrimiçi bulut platformuyla 20.07.2023 tarihinde buradayız. Şirketimizin amacı, insanların Çevrimiçi Madencilik için makineler kiralayarak Tron blockchain'i desteklemesidir. Böylece Gwei ücretleri en aza indirilir ve daha az ücretle daha hızlı bir blockchain oluşturulur! Kiraladığınız makineler size ek gelir sağlar. Örneğin, Vip1 satın aldığınızda özel yazılım, şirketimizdeki X marka makineyi sisteminiz için hazırlar. Böylece Bulut Madenciliği ile çevrimiçi madencilik yapabileceksiniz. Sizler için promosyon ödüllerini daha karlı hale getirdik. Dolayısıyla daha fazla müşteri getirerek hem bize hem de size destek olacaksınız. Kendinize ve bize güvenerek kar elde edebilir ve şirketimizin sunduğu VIP paketlerle başlayabilirsiniz. Kendi çevrimiçi pazarlama ağınızı geliştirebilirsiniz. Şirketimiz her zaman yeniliklerle güncellenir. Sunduğumuz yol haritasını inceleyebilirsiniz.",
+        "53": "BİRLİKTE OLALIM VE ŞİRKETİMİZİ GELİŞTİRELİM!"
+        },
+        "settings": {
+            "0": "Ayarlar"
+        }
 
 }
