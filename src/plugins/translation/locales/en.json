@@ -57,7 +57,121 @@
         "7":"Do you have an account",
         "8":"Register"
     },
-    "deposit": {
+    "Deposit": {
         "0":"Allowed formats jpg/jpeg/png"
-    }
+    },
+    "business": {
+        "0": "Copy Referral URL",
+        "1": "Buy New Machine",
+        "2": "day",
+        "3": "Active Packages",
+        "4": "Name",
+        "5": "Rate",
+        "6": "Money",
+        "7": "Passive Packages"
+        },
+        "invest": {
+            "0": "Choose your machine!",
+            "1": "IMPORTANT!!!",
+            "2": "Before choosing your machine, you need to know that the amount you earn after making an investment is reflected in your account when the machine expires at the time it represents.",
+            "3": "Time",
+            "4": "Gain",
+            "5": "Max",
+            "6": "Lucky Draw"
+        },
+        "reference": {
+            "0": "Reference Level 1",
+            "1": "Name",
+            "2": "Email", 
+            "3": "Active",
+            "4": "Send",
+            "5": "Do you want to send money?",
+            "6": "Enter Amount",
+            "7": "Yes",
+            "8": "No"
+        },
+        "profile": {
+            "0": "Deposit",
+            "1": "Withdraw",
+            "2": "Flexible", 
+            "3": "Real",
+            "4": "Transfer between balances"
+        },
+        "deposit": {
+            "0": "Deposit Currency",
+            "1": "WALLET",
+            "2": "Make Deposit", 
+            "3": "Amount",
+            "4": "Pay",
+            "5": "Minimum Deposit is 10 trx, maximum deposit is 100,000 trx.",
+            "6": "Copy and send tron ​​(trc20) address to invest. then send us the check for proof. Your investment will be deposited within 1-2 hours.",
+            "7": "( The deposit is made between 08:00 and 20:00.) The transactions you see work with Swedish time (GMT+2)."
+        },
+        "withdraw": {
+            "0": "Withdraw funds",
+            "1": "Please make sure you enter the correct Tron (TRC20) address, withdrawals will take place within 6 hours. Withdrawal commission 2%. Minimum Withdrawal is 10 trx, maximum Withdrawal is 100,000 trx.",
+            "2": "(The withdrawal is made between 08:00-20:00.) The transactions you see work with Swedish time (GMT+2).",
+            "3": "Withdrawable amount",
+            "4": "Write your adress",
+            "5": "Withdraw funds"
+        },
+        "about": {
+            "0": "How to become a partner at TronGMC?",
+            "1": "To become a partner of our company, you need to rent one of the packages we offer. So you support Tron Blockchain and become a partner of our company.",
+            "2": "What should happen after registering with the company?",
+            "3": "After registering with our company, you must be a member of the VIP packages we offer. When a member is found, machines are rented, earnings are protected online and reflected in your balance.",
+            "4": "Rented machines work according to the amount you pay and profit is provided.",
+            "5": "I want to withdraw money from my account, how can I do it?",
+            "6": "Go to the Accounts section and run the \"Withdrawal\" section. and enter the trx address. Enter the limits you want to shoot and shoot.",
+            "7": "The minimum withdrawal deposit is 10 trx, the minimum savings deposit is 20 trx.",
+            "8": "You can withdraw money only once a day. Withdrawal and investment hours are 08:00 and 20:00. (Swedish time)",
+            "9": "Which deposit units can he invest in?",
+            "10": "TRX (TRC20) only. Because we have an agreement with Tron company and we only accept tron. This is because to support Tron Blockchain and build volume on Tron.",
+            "11": "What is the level of VIP packages?",
+            "12": "Each VIP package has different devices and different hash rate. By purchasing VIP1, you are renting your minimum power consumption. and increases the weak hashrate size by 7% per day. However, by purchasing VIP 5 you get a higher interest rate, which is fair.",
+            "13": "I have withdrawn money but it hasn't come yet, why?",
+            "14": "There may be delays in the withdrawal time. The reason for this is that it is registered with a company owned by more people. If you have such a letter, please send a text message to our support line.",
+            "15": "Only TRX is used for withdrawals.",
+            "16": "Your transactions are recorded and you can see them.",
+            "17": "How can I find out or change my password if I forgot it?",
+            "18": "If you want to change the password, you can update the password by using \"Change password\"in the accounts section and typing the previous password and re-entering the new password and new password.",
+            "19": "How is money deposited into the account?",
+            "20": "If you want to add funds to your account, go to \"profile\" and tap on deposit. after that select TRX (TRC20) and choose how much you want to invest. (minimum deposit 10 trx. Commission 2% ) Trx amount will be transferred to your balance after saving",
+            "21": "How much can I get from VIP packages?",
+            "22": "VIP-1=10 purchase rights,",
+            "23": "VIP-2=50 purchase rights,",
+            "24": "VIP-3=100 purchase rights,",
+            "25": "VIP-4=500 purchase right,",
+            "26": "VIP-5=1000 purchase rights.The reason we limit packages here is because machines are limited. As our company grows, you can choose more machines. The dashboard will be updated as other packages arrive.We kindly ask you to follow the rules set out below. Otherwise, your account will be blocked.",
+            "27": "Opening multiple accounts from the same IP,",
+            "28": "Interfering with someone else's account, hacking their account and changing their password.",
+            "29": "BOT, Program usage in the account",
+            "30": "Logging into user accounts or asking users to take over accounts.",
+            "31": "Disrespecting and insulting moderators.These rules are important and basic rules for our company. We care about our users and we love them.I have some questions, where can I find the answers to these questions?",
+            "32": "If you have questions, go to the link in the \"Support\" section above and write your questions to the moderators. They will answer your related questions.Spinner system and VIP packages",
+            "33": "VIP-1= 7 days and 7% gain. 1 reel spin gift.",
+            "34": "VIP-2=10 days and 8% gain. 3 reel spins gift.",
+            "35": "VIP-3= 15 days and 10% gain. 6 reel spins gift.",
+            "36": "VIP-4= 20 days and 11% profit. 10 spins, 50 tron ​​gift.",
+            "37": "VIP-5=25 days and 12% gain. 20 spins, 250 trx gifts.\"SPIN THE WHEEL\" section is a bonus system created for fun. Our users can earn additional income by taking advantage of this wheel. The wheel spins randomly.Tron Genesis Mining Cloud is officially licensed by Justin Sun. We are grateful to Justin Sun for this license.",
+            "38": "Promotional Reward system",
+            "39": "You can earn additional rewards by inviting your friends to Tron GMC. 10% in 1st Referral, 2.Referaldd 5% In the 3rd Referral you gain 3%.",
+            "40": "For example, an invitee named A receives B and A receives 10% of B's ​​deposit. If B goes and invites C, this time A gets 5% of C's investment. If person C invites person D, this time person A wins 3% of the investment amount.",
+            "41": "To create a team, copy the \"Share with friends\" link and send it to your friends. After your friends register and purchase the VIP package, the promotional reward will be automatically reflected in your balance.",
+            "42": "You get more income by referring people to the company. You also support the company. In return for this support, you will receive certain bonuses. As TRONGMC, we send our best wishes, love and respect.",
+            "43": "Lucky Tickets draws",
+            "44": "These sweepstakes are a new method implemented by TronGMC and welcomed by users. You can buy lottery tickets here and increase your chances of winning. The first 3 randomly selected participants are awarded prizes, taking into account the number of tickets and the number of referrals. (The prizes will be different in each draw.) The ticket price is 5 trx.",
+            "45": "Official Information of the Company",
+            "46": "Official website",
+            "47": "Official Telegram channel",
+            "48": "Official Telegram group",
+            "49": "Company address: TOPSECRET company established in Sweden.",
+            "50": "Tron Genesis Mining Cloud is officially licensed by Justin Sun. We are grateful to Justin Sun for this license.",
+            "51": "ABOUT TRON GENESIS MINING CLOUD COMPANY",
+            "52": "Tron Genesis Mining Cloud company is Tron mining company which was established on 05.10.2021 in İşvecre. Our company's goal is to minimize the Gwei fee on the Tron blockchain. We are working hard for this. In short, TRONGMC company is signing a brand new plan!. We are here with our company's online cloud platform on 20.07.2023. Our company's purpose is for people to rent machinery for Mining Online and support the Tron blockchain. With this, Gwei will minimize fees and create a faster blockchain with less fees! In this, the machines you rent will provide you with additional income. For example, when you buy Vip1, the special software will be preparing the X brand machine in our company for your system. So you will be able to mine online with Cloud Mining. We have made promotional rewards more profitable for you. so by bringing more customers to our company, you will support us and yourself. You can profit by trusting yourself and us, and you can start with the VIP packages offered by our company. You can develop your own online marketing network. Our company will always be updated with innovations. You can review the Roadmap we offer on our site.",
+            "53" :"LET'S BE TOGETHER AND DEVELOP OUR COMPANY!."
+        },
+        "settings": {
+            "0": "Settings"
+        }
 }
