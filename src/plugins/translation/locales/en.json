@@ -3,7 +3,7 @@
     "English": "English",
     "Turkish": "Turkish",
     "Russian": "Russian",
-    "About" : "English About Text??????????",
+    "About" : "About",
     "Home" : "Home",
     "Business" : "Business",
     "Invest" : "Invest",
@@ -153,7 +153,7 @@
             "34": "VIP-2=10 days and 8% gain. 3 reel spins gift.",
             "35": "VIP-3= 15 days and 10% gain. 6 reel spins gift.",
             "36": "VIP-4= 20 days and 11% profit. 10 spins, 50 tron ​​gift.",
-            "37": "VIP-5=25 days and 12% gain. 20 spins, 250 trx gifts.\"SPIN THE WHEEL\" section is a bonus system created for fun. Our users can earn additional income by taking advantage of this wheel. The wheel spins randomly.Tron Genesis Mining Cloud is officially licensed by Justin Sun. We are grateful to Justin Sun for this license.",
+            "37": "VIP-5=25 days and 12% gain. 20 spins, 250 trx gifts.",
             "38": "Promotional Reward system",
             "39": "You can earn additional rewards by inviting your friends to Tron GMC. 10% in 1st Referral, 2.Referaldd 5% In the 3rd Referral you gain 3%.",
             "40": "For example, an invitee named A receives B and A receives 10% of B's ​​deposit. If B goes and invites C, this time A gets 5% of C's investment. If person C invites person D, this time person A wins 3% of the investment amount.",
@@ -169,7 +169,18 @@
             "50": "Tron Genesis Mining Cloud is officially licensed by Justin Sun. We are grateful to Justin Sun for this license.",
             "51": "ABOUT TRON GENESIS MINING CLOUD COMPANY",
             "52": "Tron Genesis Mining Cloud company is Tron mining company which was established on 05.10.2021 in İşvecre. Our company's goal is to minimize the Gwei fee on the Tron blockchain. We are working hard for this. In short, TRONGMC company is signing a brand new plan!. We are here with our company's online cloud platform on 20.07.2023. Our company's purpose is for people to rent machinery for Mining Online and support the Tron blockchain. With this, Gwei will minimize fees and create a faster blockchain with less fees! In this, the machines you rent will provide you with additional income. For example, when you buy Vip1, the special software will be preparing the X brand machine in our company for your system. So you will be able to mine online with Cloud Mining. We have made promotional rewards more profitable for you. so by bringing more customers to our company, you will support us and yourself. You can profit by trusting yourself and us, and you can start with the VIP packages offered by our company. You can develop your own online marketing network. Our company will always be updated with innovations. You can review the Roadmap we offer on our site.",
-            "53" :"LET'S BE TOGETHER AND DEVELOP OUR COMPANY!."
+            "53" :"LET'S BE TOGETHER AND DEVELOP OUR COMPANY!.",
+            "54": "The reason we limit packages here is because machines are limited. As our company grows, you can choose more machines. The dashboard will be updated as other packages arrive.",
+            "55": "We kindly ask you to follow the rules set out below. Otherwise, your account will be blocked.",
+            "56": "These rules are important and basic rules for our company. We care about our users and we love them.",
+            "57": "I have some questions, where can I find the answers to these questions?",
+            "58": "Spinner system and VIP packages",
+            "59": "\"SPIN THE WHEEL\" section is a bonus system created for fun. Our users can earn additional income by taking advantage of this wheel. The wheel spins randomly.",
+            "60": "Tron Genesis Mining Cloud is officially licensed by Justin Sun. We are grateful to Justin Sun for this license."
+
+
+
+
         },
         "settings": {
             "0": "Settings"
