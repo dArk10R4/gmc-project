@@ -81,14 +81,16 @@ export default {
             console.log(this.currentItem);
             let amount = this.$refs.amount;
             try {
+                console.log('here')
                 let data = UserService.sendToRef({
                     amount :amount,
-                    friend_id: currentItem.id
+                    friend_id: this.currentItem.id
                 });
 
             } catch(e) {
                 console.log(e)
             }
+            this.currentItem = null;
         }
     },
     async created() {
