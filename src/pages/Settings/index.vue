@@ -1,29 +1,46 @@
 <template>
-    <main>
+    <main style="color:black">
         <div class="containersettings" v-if="user">
-            <h2 style="text-align: center; margin: 10px 0px;">Settings</h2>
+            <h2 style="text-align: center; margin: 10px 0px;">{{ translate('settings').value[0]}}</h2>
+            
             <div class="image">
                 <img :src="user.image" alt="">
                 <input ref= 'imageInput'  type="file" v-if="imageChange" @change="handleImageChange">
                 <ion-icon :name="!imageChange ? 'create-outline' : 'checkmark-outline'"
                     @click="toggleImageInput"></ion-icon>
             </div>
+            <p style="padding-left: 22px;">
+                {{ translate('settings').value[1]}} 
+            </p>
             <div class="inputdivi">
                 <input type="text" v-model="user.username" :disabled="usernameDisabled">
                 <ion-icon :name="usernameDisabled ? 'create-outline' : 'checkmark-outline'"
                     @click="toggleUsernameInput"></ion-icon>
             </div>
 
+            
+            <p style="padding-left: 22px;">
+
+                {{ translate('settings').value[2]}} 
+                </p>
             <div class="inputdivi">
                 <input type="text" v-model="user.email" :disabled="emailDisabled">
                 <ion-icon :name="emailDisabled ? 'create-outline' : 'checkmark-outline'"
                     @click="toggleEmailInput"></ion-icon>
             </div>
+            <p style="padding-left: 22px;">
+
+                {{ translate('reference').value[2]}}
+            </p>
             <div class="inputdivi">
                 <input type="text" v-model="user.phone" :disabled="phoneDisabled">
                 <ion-icon :name="phoneDisabled ? 'create-outline' : 'checkmark-outline'"
                     @click="togglePhoneInput"></ion-icon>
             </div>
+            <p style="padding-left: 22px;">
+
+                {{ translate('settings').value[3]}} 
+            </p>
         </div>
 
         <div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
@@ -36,8 +53,16 @@ import { useUserStore } from '@/stores/UserStore'
 import axios from "axios"
 import axiosIns from '@/plugins/axios/index.js'
 import UserService from '@/services/UserService'
-
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
 export default {
+    computed: {
+    translate() {
+      const store = useLocaleStore();
+      store.initializeLocale();
+      return (key) => store.translate(key);
+    },
+  },
     data() {
         return {
             usernameDisabled: true,

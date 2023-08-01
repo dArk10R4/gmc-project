@@ -62,13 +62,13 @@ const logOut = async () => {
     </div>
 
     <div class="join">
-      <button v-if="!showButtons" @click="toggleButtons">Join Now</button>
+      <button v-if="!showButtons" @click="toggleButtons">{{ translate('Join').value }}</button>
       <div v-if="showButtons">
-        <button @click="signIn">Sign In</button>
-        <button @click="signUp">Sign Up</button>
+        <button @click="signIn">{{ translate('signIn').value }}</button>
+        <button @click="signUp">{{ translate('signUp').value }}</button>
       </div>
       <div v-else>
-        <button @click="logOut">Log Out</button>
+        <button @click="logOut">{{ translate('logOut').value }}</button>
       </div>
     </div>
   </header>

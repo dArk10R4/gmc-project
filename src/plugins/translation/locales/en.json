@@ -9,6 +9,10 @@
     "Invest" : "Invest",
     "Reference" : "Reference",
     "Profile" : "Profile",
+    "Join" : "Join Now",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "logOut" : "Log Out",
 
     "home":{
         "0" : "Wallet balance",
@@ -63,7 +67,7 @@
     "business": {
         "0": "Copy Referral URL",
         "1": "Buy New Machine",
-        "2": "day",
+        "2": "Day",
         "3": "Active Packages",
         "4": "Name",
         "5": "Rate",
@@ -77,10 +81,16 @@
             "3": "Time",
             "4": "Gain",
             "5": "Max",
-            "6": "Lucky Draw"
+            "6": "Lucky Draw",
+            "7": "Active Machine",
+            "8": "Do you approve?",
+            "9" : "Payable to get this package",
+            "10": "You will earn when the pack expires",
+            "11": "Purchase successful!",
+            "12": "You don't have money for this packace or you reached your maximum purchase for package!"
         },
         "reference": {
-            "0": "Reference Level 1",
+            "0": "Reference Level",
             "1": "Name",
             "2": "Email", 
             "3": "Active",
@@ -95,7 +105,10 @@
             "1": "Withdraw",
             "2": "Flexible", 
             "3": "Real",
-            "4": "Transfer between balances"
+            "4": "Transfer between balances",
+            "5":"Invest",
+            "6":"Profit",
+            "7":"On Invest"
         },
         "deposit": {
             "0": "Deposit Currency",
@@ -160,7 +173,7 @@
             "41": "To create a team, copy the \"Share with friends\" link and send it to your friends. After your friends register and purchase the VIP package, the promotional reward will be automatically reflected in your balance.",
             "42": "You get more income by referring people to the company. You also support the company. In return for this support, you will receive certain bonuses. As TRONGMC, we send our best wishes, love and respect.",
             "43": "Lucky Tickets draws",
-            "44": "These sweepstakes are a new method implemented by TronGMC and welcomed by users. You can buy lottery tickets here and increase your chances of winning. The first 3 randomly selected participants are awarded prizes, taking into account the number of tickets and the number of referrals. (The prizes will be different in each draw.) The ticket price is 5 trx.",
+            "44": "These sweepstakes are a new method implemented by TronGMC and welcomed by users. You can buy lottery tickets here and increase your chances of winning. The first 3 randomly selected participants are awarded prizes, taking into account the number of tickets and the number of referrals. (The prizes will be different in each draw.)",
             "45": "Official Information of the Company",
             "46": "Official website",
             "47": "Official Telegram channel",
@@ -168,7 +181,7 @@
             "49": "Company address: TOPSECRET company established in Sweden.",
             "50": "Tron Genesis Mining Cloud is officially licensed by Justin Sun. We are grateful to Justin Sun for this license.",
             "51": "ABOUT TRON GENESIS MINING CLOUD COMPANY",
-            "52": "Tron Genesis Mining Cloud company is Tron mining company which was established on 05.10.2021 in İşvecre. Our company's goal is to minimize the Gwei fee on the Tron blockchain. We are working hard for this. In short, TRONGMC company is signing a brand new plan!. We are here with our company's online cloud platform on 20.07.2023. Our company's purpose is for people to rent machinery for Mining Online and support the Tron blockchain. With this, Gwei will minimize fees and create a faster blockchain with less fees! In this, the machines you rent will provide you with additional income. For example, when you buy Vip1, the special software will be preparing the X brand machine in our company for your system. So you will be able to mine online with Cloud Mining. We have made promotional rewards more profitable for you. so by bringing more customers to our company, you will support us and yourself. You can profit by trusting yourself and us, and you can start with the VIP packages offered by our company. You can develop your own online marketing network. Our company will always be updated with innovations. You can review the Roadmap we offer on our site.",
+            "52": "Tron Genesis Mining Cloud company is Tron mining company which was established on 05.10.2021 in Sweden. Our company's goal is to minimize the Gwei fee on the Tron blockchain. We are working hard for this. In short, TRONGMC company is signing a brand new plan!. We are here with our company's online cloud platform on 20.07.2023. Our company's purpose is for people to rent machinery for Mining Online and support the Tron blockchain. With this, Gwei will minimize fees and create a faster blockchain with less fees! In this, the machines you rent will provide you with additional income. For example, when you buy Vip1, the special software will be preparing the X brand machine in our company for your system. So you will be able to mine online with Cloud Mining. We have made promotional rewards more profitable for you. so by bringing more customers to our company, you will support us and yourself. You can profit by trusting yourself and us, and you can start with the VIP packages offered by our company. You can develop your own online marketing network. Our company will always be updated with innovations. You can review the Roadmap we offer on our site.",
             "53" :"LET'S BE TOGETHER AND DEVELOP OUR COMPANY!.",
             "54": "The reason we limit packages here is because machines are limited. As our company grows, you can choose more machines. The dashboard will be updated as other packages arrive.",
             "55": "We kindly ask you to follow the rules set out below. Otherwise, your account will be blocked.",
@@ -183,6 +196,15 @@
 
         },
         "settings": {
-            "0": "Settings"
+            "0": "Settings",
+            "1":"Image",
+            "2":"Username",
+            "3":"Phone"
+        },
+        "lucky": {
+            "0":"Spin",
+            "1":"Remaining Spin",
+            "2": "You do not have the right to rotate!",
+            "3":"Wheel spin successful!"
         }
 }

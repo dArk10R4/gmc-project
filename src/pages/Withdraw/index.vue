@@ -3,12 +3,12 @@
 		<div class="withdrawBox" v-if="user">
 			<div class="withdraw">
 				<div class="headerwithdraw">
-					<h1>Withdraw funds</h1>
+					<h1>{{ translate('withdraw').value[0] }}</h1>
 				</div>
 				<div class="text">
-					<p>	Please make sure you enter the correct Tron (TRC20) address, withdrawals will take place within 6 hours.  Withdrawal commission 2%. Minimum Withdrawal is 10 trx, maximum Withdrawal is 100,000 trx.</p>
+					<p>	{{ translate('withdraw').value[1] }}</p>
 					<br>
-					<p id="w_text">(The withdrawal is made between 08:00-20:00.) The transactions you see work with Swedish time (GMT+2).</p>
+					<p id="w_text">{{ translate('withdraw').value[2] }}</p>
 				</div>
 				
 				<div class="balanceBox article_center">
@@ -20,7 +20,7 @@
 									<span>{{ user.balance_r }} TRX</span>
 								</div>
 								
-								<h3>Withdrawable amount</h3>
+								<h3>{{ translate('withdraw').value[3] }}</h3>
 							</div>
 		
 
@@ -30,11 +30,15 @@
 					<div class="adressWrite">
 						<form @submit.prevent="sendWithdrawRequest">
 							<div class="adress">
-								<input type="text" v-model="withdraw_adress" placeholder="Write Your Address">
+								<input type="text" v-model="withdraw_adress" :placeholder="translate('withdraw').value[4]">
 							</div>
 							<div class="sendBtn">
+<<<<<<< HEAD
 								<button type="submit">Withdraw funds</button>
 								
+=======
+								<button type="submit">{{ translate('withdraw').value[5] }}</button>
+>>>>>>> 859aef3f02c82a4f9a5a94e0e5e89a96e0344689
 							</div>
 						</form>
 					</div>
@@ -57,8 +61,23 @@
 <script>
 import { useUserStore } from '@/stores/UserStore'
 import PaymentService from '@/services/PaymentService'
-
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
 export default {
+	setup() {
+    const store = useLocaleStore();
+
+    // Initialize locale
+    onMounted(() => {
+      store.initializeLocale();
+    });
+
+    const translate = (key) => computed(() => store.translate(key)).value;
+
+    return {
+      translate,
+    };
+  },
 	data() {
 		return {
 			user: null,

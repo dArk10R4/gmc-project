@@ -1,20 +1,20 @@
 <template>
     <main v-if="references">
         <div class="table-box" v-for="(refList, refKey) in references" :key="refKey">
-            <h5><a>Reference Level {{ refKey }}</a></h5>
+            <h5><a>{{ translate('reference').value[0]}} {{ refKey }}</a></h5>
 
             <div class="table-row table-head">
                 <div class="table-cell first-cell">
-                    <p>Name</p>
+                    <p>{{ translate('reference').value[1]}}</p>
                 </div>
                 <div class="table-cell">
-                    <p>Email</p>
+                    <p>{{ translate('reference').value[2]}}</p>
                 </div>
                 <div class="table-cell last-cell">
-                    <p>Active</p>
+                    <p>{{ translate('reference').value[3]}}</p>
                 </div>
                 <div class="table-cell last-cell">
-                    <p>Send</p>
+                    <p>{{ translate('reference').value[4]}}</p>
                 </div>
             </div>
 
@@ -27,7 +27,7 @@
                     <p>{{ item.email }}</p>
                 </div>
                 <div class="table-cell">
-                    <a href="">Active</a>
+                    <a href="">{{ translate('reference').value[3]}}</a>
                 </div>
                 <div class="table-cell last-cell">
                     <ion-icon @click="openPopup(item)" name="cash-outline"></ion-icon>
@@ -38,13 +38,13 @@
         <div class="popup" v-if="isPopupOpen">
             <form @submit.prevent="sendMoney">
                 <div class="content" >
-                    <h2>{{ username }} kişisine para göndermek istiyor musun?</h2>
+                    <h2>{{ translate('reference').value[5]}}</h2>
                     <div class="info" >
-                        <input type="number" ref="amount" min="0" placeholder="Tutarı Girin!">
+                        <input type="number" ref="amount" min="0" :placeholder="translate('reference').value[6]">
                     </div>
                     <div class="buttons">
-                        <button type="submit" >Evet</button>
-                        <button type="button" @click="closePopup">Hayır</button>
+                        <button type="submit" >{{ translate('reference').value[7]}}</button>
+                        <button type="button" @click="closePopup">{{ translate('reference').value[8]}}</button>
                     </div>
                 </div>
             </form>
@@ -54,8 +54,23 @@
 
 <script>
 import UserService from '@/services/UserService';
-
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
 export default {
+    setup() {
+    const store = useLocaleStore();
+
+    // Initialize locale
+    onMounted(() => {
+      store.initializeLocale();
+    });
+
+    const translate = (key) => computed(() => store.translate(key)).value;
+
+    return {
+      translate,
+    };
+  },
     data() {
         return {
             references: null,
@@ -79,13 +94,18 @@ export default {
         },
         async sendMoney (){
             console.log(this.currentItem);
-            let amount = this.$refs.amount;
+            let amount = this.$refs.amount.value;
+            console.log(amount)
+            if (!amount && amount<=0 && ! this.currentItem) {
+                return;
+            }
             try {
                 console.log('here')
                 let data = UserService.sendToRef({
                     amount :amount,
                     friend_id: this.currentItem.id
                 });
+                this.closePopup()
 
             } catch(e) {
                 console.log(e)

@@ -68,9 +68,12 @@
                         <RouterLink to="/lucky">{{ translate('home').value[7] }}</RouterLink>
                     </a>
                 </div>
-                <div class="biletolan">
-                    <a href="#"><ion-icon name="medical-outline" style="font-size: 40px;"></ion-icon>
-                        <RouterLink to="/profile/ticket">{{ translate('home').value[8] }}</RouterLink>
+                <div class="biletolan" style="cursor:not-allowed">
+                    <div style="position: absolute;background-color: rgba(92, 92, 92,.7);width:43% ; height: 90px;text-align: center;display: flex;align-items: center;justify-content: center;z-index: 100;flex-direction: column;"><ion-icon name="lock-closed-outline" style="font-size: 45px;color: #D8D9DA;font-weight: 600px;"></ion-icon>
+                    <!-- <p style="color: #D8D9DA;font-weight: 700;font-size: 20px;">Coming soon!!!</p> -->
+                    </div>
+                    <a href="#" style="cursor:not-allowed"><ion-icon name="medical-outline" style="font-size: 40px;"></ion-icon>
+                        <span style="cursor:not-allowed" >{{ translate('home').value[8] }}</span>
                     </a>
                 </div>
             </div>
@@ -185,7 +188,7 @@
         align-items: center; flex-direction: column; height: 80px; width: 40%;  background-image: url(https://images.unsplash.com/photo-1595026677025-0eff2b5b3a16?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80); border-radius: 20px;">
             <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1958.png" alt="" style="width: 30px;">
             <h3 style="font-size:1em">{{ translate('home').value[30] }}</h3>
-            <p>10.527</p>
+            <p>100187</p>
         </div>
 
         <div class="companiesdiv" style="display: flex; justify-content: center;
