@@ -10,6 +10,7 @@
 					<br>
 					<p id="w_text">(The withdrawal is made between 08:00-20:00.) The transactions you see work with Swedish time (GMT+2).</p>
 				</div>
+				
 				<div class="balanceBox article_center">
 					<div class="balance">
 	
@@ -33,15 +34,24 @@
 							</div>
 							<div class="sendBtn">
 								<button type="submit">Withdraw funds</button>
+								
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		
 		<div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
 		<div class="error-message" v-if="showErrorMessage">{{ errorMessage }}</div>
+		<div class="center ">
+			<router-link to="/withdrawhistory" >
+				<button id="historyBtn" >go to history</button>
+			</router-link>
+		</div>
+
+
+	
 	</main>
 </template>
 <script>
@@ -90,6 +100,7 @@ export default {
 }
 </script>
 <style scoped>
+.center{text-align: center;}
 main {
 	background: black;
 	color: #fff;
@@ -231,5 +242,12 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+#historyBtn{
+	padding: 1em 2em;
+	margin-bottom: 1em;
+	font-weight: 600;
+	
 }
 </style>

@@ -15,12 +15,12 @@
       </div>
       <!-- balance bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
-        <p class="text-color">Deposit Currency</p>
+        <p class="text-color">{{ translate('deposit').value[0] }}</p>
       </div>
       <!-- network bar start  -->
       <div class="networkBar" @click="makeDeposit">
         <div class="text">
-          <h4>WALLET</h4>
+          <h4>{{ translate('deposit').value[1] }}</h4>
         </div>
         <div class="rightIcon">
           <p><ion-icon name="chevron-forward-outline"></ion-icon></p>
@@ -28,21 +28,21 @@
       </div>
       <div class="deposit_modal" v-if="depositAvaliable">
         <div class="deposit">
-          <h2>Make Deposit</h2>
+          <h2>{{ translate('deposit').value[2] }}</h2>
           <form @submit.prevent="sendDepositRequest">
             <div class="form-item">
-              <label for="amount"><span> Amount</span></label>
+              <label for="amount"><span>{{ translate('deposit').value[3] }}</span></label>
               <input ref="amountInput" type="number" v-model.number="amount" min="10">
             </div>
 
-            <button type="submit">Pay</button>
+            <button type="submit">{{ translate('deposit').value[4] }}</button>
           </form>
         </div>
       </div>
       <!-- network bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
         <p class="text-color">
-          <ion-icon name="alert-circle-outline"></ion-icon> Minimum Deposit is 10 trx, maximum deposit is 100,000 trx. 
+          <ion-icon name="alert-circle-outline"></ion-icon>{{ translate('deposit').value[5] }} 
         </p>
       </div>
       <!-- deposit addres start -->
@@ -69,14 +69,20 @@
       </div>
       <br><br>
       <div class="text-div">
-        <p class="text-color">Copy and send tron ​​(trc20) address to invest.  then send us the check for proof. Your investment will be deposited within 1-2 hours.</p><br>
-        <p id="text-color">( The deposit is made between 08:00 and 20:00.) The transactions you see work with Swedish time (GMT+2). </p> <br>
+        <p class="text-color">{{ translate('deposit').value[6] }}</p><br>
+        <p id="text-color">{{ translate('deposit').value[7] }}</p> <br>
        
       </div>
     </div>
     <!-- deposit end -->
         <div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
         <div class="error-message" v-if="showErrorMessage">{{ errorMessage }}</div>
+
+        <div class="center ">
+          <router-link to="/deposithistory" >
+            <button id="historyBtn" >go to deposit</button>
+          </router-link>
+        </div>
   </main>
 </template>
 <script>
@@ -215,6 +221,7 @@ export default {
   }
 </script>
 <style scoped>
+.center{text-align: center;}
 main {
   color: #fff;
 }
@@ -372,5 +379,12 @@ p{
 }
 .text-color{  color:#333 ;}
 .text-div{padding: 0px 25px;}
+
+#historyBtn{
+	padding: 1em 2em;
+	margin-bottom: 1em;
+	font-weight: 600;
+	
+}
 
 </style>
