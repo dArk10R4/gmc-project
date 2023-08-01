@@ -15,20 +15,15 @@
       </div>
       <!-- balance bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
-<<<<<<< HEAD
         <p class="text-color">{{ translate('deposit').value[0] }}</p>
-=======
-        <p class="text-color">{{ translate('deposit').value[0]}}</p>
->>>>>>> 859aef3f02c82a4f9a5a94e0e5e89a96e0344689
+
       </div>
       <!-- network bar start  -->
       <div class="networkBar" @click="makeDeposit">
         <div class="text">
-<<<<<<< HEAD
+
           <h4>{{ translate('deposit').value[1] }}</h4>
-=======
-          <h4>{{ translate('deposit').value[1]}}</h4>
->>>>>>> 859aef3f02c82a4f9a5a94e0e5e89a96e0344689
+
         </div>
         <div class="rightIcon">
           <p><ion-icon name="chevron-forward-outline"></ion-icon></p>
@@ -36,7 +31,6 @@
       </div>
       <div class="deposit_modal" v-if="depositAvaliable">
         <div class="deposit">
-<<<<<<< HEAD
           <h2>{{ translate('deposit').value[2] }}</h2>
           <form @submit.prevent="sendDepositRequest">
             <div class="form-item">
@@ -45,27 +39,13 @@
             </div>
 
             <button type="submit">{{ translate('deposit').value[4] }}</button>
-=======
-          <h2>{{ translate('deposit').value[2]}}</h2>
-          <form @submit.prevent="sendDepositRequest">
-            <div class="form-item">
-              <label for="amount"><span> {{ translate('deposit').value[3]}}</span></label>
-              <input ref="amountInput" type="number" v-model.number="amount" min="10">
-            </div>
-
-            <button type="submit">{{ translate('deposit').value[4]}}</button>
->>>>>>> 859aef3f02c82a4f9a5a94e0e5e89a96e0344689
           </form>
         </div>
       </div>
       <!-- network bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
         <p class="text-color">
-<<<<<<< HEAD
           <ion-icon name="alert-circle-outline"></ion-icon>{{ translate('deposit').value[5] }} 
-=======
-          <ion-icon name="alert-circle-outline"></ion-icon> {{ translate('deposit').value[5]}} 
->>>>>>> 859aef3f02c82a4f9a5a94e0e5e89a96e0344689
         </p>
       </div>
       <!-- deposit addres start -->
@@ -92,13 +72,8 @@
       </div>
       <br><br>
       <div class="text-div">
-<<<<<<< HEAD
         <p class="text-color">{{ translate('deposit').value[6] }}</p><br>
         <p id="text-color">{{ translate('deposit').value[7] }}</p> <br>
-=======
-        <p class="text-color">{{ translate('deposit').value[6]}}</p><br>
-        <p id="text-color">{{ translate('deposit').value[7]}}</p> <br>
->>>>>>> 859aef3f02c82a4f9a5a94e0e5e89a96e0344689
        
       </div>
     </div>
@@ -261,7 +236,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-
+ 
 .currencyBar .currency ul li {
   display: flex;
   align-items: center;

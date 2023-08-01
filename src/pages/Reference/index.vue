@@ -21,7 +21,7 @@
             <div class="table-row" v-for="(item, index) in refList" :key="index">
             
                 <div class="table-cell first-cell">
-                    <p>{{(index + 1)}}.  {{ item.username }}</p>
+                    <p>{{(index + 1)}}.{{ item.username }}</p>
                 </div>
                 <div class="table-cell">
                     <p>{{ item.email }}</p>
