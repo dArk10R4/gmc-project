@@ -5,10 +5,14 @@
     "Russian": "Rusça",
     "About" : "Hakkımızda",
     "Home" : "Anasayfa",
-    "Business" : "Business???",
+    "Business" : "Business",
     "Invest" : "Yatırım",
     "Reference" : "Referans",
     "Profile" : "Profil",
+    "Join" : "Şimdi Katıl",
+    "signIn": "Giriş yap",
+    "signUp": "Kayıt olmak",
+    "logOut" : "Çıkış Yap",
     "home":{
         "0" : "Cüzdan bakiyesi",
         "1":"Depozito",
@@ -75,11 +79,17 @@
         "3": "Zaman",
         "4": "Kazanmak",
         "5": "Maks",
-        "6": "Çark"
+        "6": "Çark",
+        "7": "Aktif Makine",
+        "8":"Onaylıyor Musun?",
+        "9":"Bu paketi almak için ödenecek",
+        "10":"Paket süresi bittiğinde kazancaksın",
+        "11":"Satın alınma başalırlı!",
+        "12": "Bu paket için paranız yok veya paket için maksimum satın alma sınırınıza ulaştınız!"
     
     },
     "reference": {
-        "0": "Referal Seviyyesi 1",
+        "0": "Referal Seviyyesi",
         "1": "Isim",
         "2": "E-posta",
         "3": "Aktif",
@@ -94,7 +104,10 @@
         "1": "Para çekimi",
         "2": "Değişken", 
         "3": "Hakiki bakiye",
-        "4": "Bakiyeler arasında aktarma yap"
+        "4": "Bakiyeler arasında aktarma yap",
+        "5": "Yatırım",
+        "6": "Kar",
+        "7": "Yatırımda"
     },
     "deposit": {
         "0": "Depozito para birimi",
@@ -106,7 +119,7 @@
         "6": "Yatırım yapmak için tron (trc20) adresini kopyalayıp gönderin. sonra ispat için çekini bize gönderin. 1-2 saat içerisinde yatırımınız yatırılacaktır.",
         "7": "( Para yatırma işlemi 08:00 ile 20:00 saatleri arasında yapılmaktadır.) Gördüğünüz işlemler İsveç saati (GMT+2) ile çalışmaktadır."
     },
-    "Withdraw": {
+    "withdraw": {
         "0": "Para çekme",
         "1": "Lütfen doğru Tron (TRC20) adresini girdiğinizden emin olun, para çekme işlemleri 6 saat içinde gerçekleşecektir. Para çekme komisyonu %2. Minimum Para Çekme 10 trx, maksimum Para Çekme 100.000 trx'tir.",
         "2": "(Çekim 08:00-20:00 saatleri arasında yapılmaktadır.) Gördüğünüz işlemler İsveç saati (GMT+2) ile çalışmaktadır.",
@@ -159,7 +172,7 @@
         "41": "Bir ekip oluşturmak için \"Arkadaşlarla paylaş\" bağlantısını kopyalayın ve arkadaşlarınıza gönderin. Arkadaşlarınız kaydolur ve VIP paketini satın aldığında, promosyon ödülü otomatik olarak bakiyenize yansıtılır.",
         "42": "Şirkete kişileri yönlendirerek daha fazla gelir elde edersiniz. Aynı zamanda şirketi desteklersiniz. Bu desteğe karşılık olarak belirli bonuslar alırsınız. TRONGMC olarak en iyi dileklerimizi, sevgimizi ve saygımızı gönderiyoruz.",
         "43": "Şanslı Bilet çekilişleri",
-        "44": "Bu çekilişler TronGMC tarafından uygulanan ve kullanıcılar tarafından hoş karşılanan yeni bir yöntemdir. Buradan bilet satın alabilir ve kazanma şansınızı artırabilirsiniz. İlk 3 rastgele seçilen katılımcı, bilet sayısı ve yönlendirmelerin sayısı dikkate alınarak ödüller kazanır. (Her çekilişte ödüller farklı olacaktır.) Bilet fiyatı 5 trx.",
+        "44": "Bu çekilişler TronGMC tarafından uygulanan ve kullanıcılar tarafından hoş karşılanan yeni bir yöntemdir. Buradan bilet satın alabilir ve kazanma şansınızı artırabilirsiniz. İlk 3 rastgele seçilen katılımcı, bilet sayısı ve yönlendirmelerin sayısı dikkate alınarak ödüller kazanır. (Her çekilişte ödüller farklı olacaktır.)",
         "45": "Şirketin Resmi Bilgileri",
         "46": "Resmi web sitesi",
         "47": "Resmi Telegram kanalı",
@@ -184,6 +197,12 @@
         },
         "settings": {
             "0": "Ayarlar"
+        },
+        "lucky": {
+            "0":"Döndür",
+            "1":"Kalan Çark Hakkı",
+            "2":"Çevirme hakkın yok!",
+            "3":"Çark döndürme başarılı!"
         }
 
 }

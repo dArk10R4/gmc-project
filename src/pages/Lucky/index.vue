@@ -6,11 +6,11 @@
                     <div class="inner-slice">{{ slice }}</div>
                 </div>
             </div>
-            <div class="spinBtn" @click="spinWheel">Spin</div>
+            <div class="spinBtn" @click="spinWheel">spin</div>
         </div>
 
         <div class="right">
-            <span v-if="user">Kalan Çark Hakkı: {{right}}</span>
+            <span v-if="user">{{ translate('lucky').value[1]}}: {{right}}</span>
         </div>
 
         <div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
@@ -21,8 +21,23 @@
 <script>
 import UserService from '../../services/UserService';
 import {useUserStore} from '@/stores/UserStore'
-
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
 export default {
+    setup() {
+    const store = useLocaleStore();
+
+    // Initialize locale
+    onMounted(() => {
+      store.initializeLocale();
+    });
+
+    const translate = (key) => computed(() => store.translate(key)).value;
+
+    return {
+      translate,
+    };
+  },
     data() {
         return {
             user: null,
@@ -55,7 +70,7 @@ export default {
                 this.rotation = 18000 + targetIndex * sliceAngle;
                 this.right = response.data.wheel
 
-                this.successMessage = 'Çark Döndürme Başarılı!';
+                this.successMessage = this.translate('lucky').value[3];
                 this.showSuccessMessage = true;
 
                 setTimeout(() => {
@@ -64,7 +79,7 @@ export default {
                 }, 5000);
             } catch (error) {
                 if (error.response.status === 400) {
-                    this.errorMessage = error.response.data['error']
+                    this.errorMessage = this.translate('lucky').value[2]
                     this.showErrorMessage = true;
 
                     setTimeout(() => {

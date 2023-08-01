@@ -2,17 +2,16 @@
   <main>
     <div class="invest">
       <div class="headline">
-        <span>Choose your machine!</span>
+        <span>{{ translate('invest').value[0]}}</span>
       </div>
 
       <div class="information">
         <div class="head">
-          <span>IMPORTANT!!!</span>
+          <span>{{ translate('invest').value[1]}}</span>
         </div>
 
         <div class="text">
-          <p>Before choosing your machine, you need to know that the amount you earn after making an investment is
-            reflected in your account when the machine expires at the time it represents.</p>
+          <p>{{ translate('invest').value[2]}}</p>
         </div>
         <div class="star"></div>
       </div>
@@ -35,38 +34,38 @@
 
           <div class="details">
             <div class="content">
-              <span>Time</span>
-              <span>{{ item.day }} Day</span>
+              <span>{{ translate('invest').value[3]}}</span>
+              <span>{{ item.day }} {{ translate('business').value[2]}}</span>
             </div>
             <div class="content">
-              <span>Gain</span>
-              <span>{{ item.interest }}% / day</span>
+              <span>{{ translate('invest').value[4]}}</span>
+              <span>{{ item.interest }}% / {{ translate('business').value[2]}}</span>
             </div>
             <div class="content">
-              <span>Max</span>
+              <span>{{ translate('invest').value[5]}}</span>
               <span>{{ item.max_purchased }} Unit</span>
             </div>
             <div class="content">
-              <span>Lucky Draw</span>
+              <span>{{ translate('invest').value[6]}}</span>
               <span>{{ item.wheel }} Due</span>
             </div>
           </div>
 
-          <button @click="openPopup(item.id)"><span>Active Machine</span> <span>{{ item.price }} TRX</span></button>
+          <button @click="openPopup(item.id)"><span>{{ translate('invest').value[7]}}</span> <span>{{ item.price }} TRX</span></button>
         </div>
       </div>
     </div>
 
     <div class="popup" v-if="isPopupOpen">
       <div class="content">
-        <h2>Onaylıyor Musun?</h2>
+        <h2>{{ translate('invest').value[8]}}</h2>
         <div class="info">
-          <p>Bu paketi {{ selectedPackage.price }} TRX karşılığında satın almak istiyor musun? Paket süresi bittiğinde {{
-            selectedPackage.total_gain }} kazancaksın!</p>
+          <p>{{ translate('invest').value[9]}}: {{ selectedPackage.price }} TRX.  {{ translate('invest').value[10]}}: {{
+            selectedPackage.total_gain }} TRX!</p>
         </div>
         <div class="buttons">
-          <button @click="registerPackage(selectedPackage.id)">Evet</button>
-          <button @click="closePopup">Hayır</button>
+          <button @click="registerPackage(selectedPackage.id)">{{ translate('reference').value[7]}}</button>
+          <button @click="closePopup">{{ translate('reference').value[8]}}</button>
         </div>
       </div>
     </div>
@@ -79,8 +78,23 @@
 <script>
 import { usePackageStore } from '@/stores/PackageStore'
 import PackageService from '@/services/PackageService'
-
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
 export default {
+  setup() {
+    const store = useLocaleStore();
+
+    // Initialize locale
+    onMounted(() => {
+      store.initializeLocale();
+    });
+
+    const translate = (key) => computed(() => store.translate(key)).value;
+
+    return {
+      translate,
+    };
+  },
   data() {
     return {
       packages: null,
@@ -101,7 +115,7 @@ export default {
         this.isPopupOpen = true
       } catch(error) {
         if(error.response.status === 400) {
-          this.errorMessage = error.response.data.error
+          this.errorMessage =  this.translate('invest').value[12]
           this.showErrorMessage = true;
 
         setTimeout(() => {
@@ -116,7 +130,7 @@ export default {
         await PackageService.register_post(id)
         this.isPopupOpen = false
 
-        this.successMessage = 'Satın alım başarılı!';
+        this.successMessage =  this.translate('invest').value[11];
         this.showSuccessMessage = true;
 
         setTimeout(() => {
@@ -217,8 +231,8 @@ export default {
   justify-content: start;
 }
 .vip_div{
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
 
 }
 #vip_img1{  background: url('@/assets/images/vip1.png') center/contain no-repeat;}
@@ -374,9 +388,9 @@ export default {
 .error-message {
   position: absolute;
   bottom: 1.5rem;
-  left: 25%;
-  width: 50%;
-  height: 3rem;
+  left: 10%;
+  width: 80%;
+  height: 3.5rem;
   background: rgba(255, 47, 47, 0.747);
   color: #fff;
   border-radius: 2rem;

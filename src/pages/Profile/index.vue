@@ -14,38 +14,38 @@ import { RouterLink } from 'vue-router'
             </div>
             <div class="stats">
                 <div class="stat">
-                    <span>Invest</span>
+                    <span>{{ translate('profile').value[5]}}</span>
                     <span>{{ totalPackages }}</span>
                 </div>
 
                 <div class="stat">
-                    <span>Profit</span>
+                    <span>{{ translate('profile').value[6]}}</span>
                     <span>{{user.balance_f}} TRX</span>
                 </div>
 
                 <div class="stat">
-                    <span>On Invest</span>
+                    <span>{{ translate('profile').value[7]}}</span>
                     <span>{{ totalMoney }} TRX</span>
                 </div>
             </div>
         </div>
         <div class="buttons">
-            <button class="bg_color"><RouterLink to="/deposit">Deposit</RouterLink></button>
-            <button class="bg_color"><RouterLink to="/withdraw">Withdraw</RouterLink></button>
+            <button class="bg_color"><RouterLink to="/deposit">{{ translate('profile').value[0]}}</RouterLink></button>
+            <button class="bg_color"><RouterLink to="/withdraw">{{ translate('profile').value[1]}}</RouterLink></button>
         </div>
         <div class="wallet" v-if="user">
             <div class="balance bg_color">
-                <span>Flexible</span>
+                <span>{{ translate('profile').value[2]}}</span>
                 <span>{{ user.balance_f }} TRX</span>
             </div>
             <div class="balance bg_color">
-                <span>Real</span>
+                <span>{{ translate('profile').value[3]}}</span>
                 <span>{{ user.balance_r }} TRX</span>
             </div>
         </div>
         <div style="text-align: center;">
 
-            <button @click="transferMoney" class="transferbutton">Transfer between balances</button>
+            <button @click="transferMoney" class="transferbutton">{{ translate('profile').value[4]}}</button>
         </div>
         <div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
         <div class="error-message" v-if="showErrorMessage">{{ errorMessage }}</div>
@@ -56,7 +56,16 @@ import { RouterLink } from 'vue-router'
 import { useUserStore } from '@/stores/UserStore'
 import UserService from '../../services/UserService';
 import PackageService from '@/services/PackageService';
+import { useLocaleStore } from '@/stores/LocaleStore';
+import { computed, onMounted } from 'vue';
 export default {
+    computed: {
+    translate() {
+      const store = useLocaleStore();
+      store.initializeLocale();
+      return (key) => store.translate(key);
+    },
+  },
   data() {
     return {
         user: null,
@@ -147,10 +156,10 @@ main {
     font-weight: 600;
 }
 .profile .image img{
-    width: 180px;
+    width: 140px;
     height: 140px;
     border: 5px solid rgb(0, 0, 0);
-    border-radius: 50%;
+    border-radius: 100%;
     margin-top: 20px;
 }
 .profile .image{

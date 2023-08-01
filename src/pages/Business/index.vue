@@ -4,30 +4,30 @@
       <div class="stats">
         <div class="banner">
           <div class="depozito">
-            <span class="amount"><div class="div_icon"></div>25964</span>
+            <span class="amount"><div class="div_icon"></div>0</span>
             <span class="unit">TRX</span>
           </div>
 
           <div class="referance">
             <div class="people" v-if="references">
-              <span>Sv.1 {{ references.ref1 }}</span>
-              <span>Sv.2 {{ references.ref2 }}</span>
-              <span>Sv.3 {{ references.ref3 }}</span>
+              <span >Lvl.1 {{ references.ref1 }}</span>
+              <span >Lvl.2 {{ references.ref2 }}</span>
+              <span >Lvl.3 {{ references.ref3 }}</span>
             </div>
-            <span>Ref</span>
+            <span style="font-weight: bold;">Ref</span>
           </div>
 
           <div class="quick-links">
-            <button @click="copyReferralURL">Copy Referral URL</button>
+            <button @click="copyReferralURL">{{ translate('business').value[0]}}</button>
             <button>
-              <RouterLink to="/invest">Buy New Machine</RouterLink>
+              <RouterLink to="/invest">{{ translate('business').value[1]}}</RouterLink>
             </button>
           </div>
         </div>
         <div class="summary">
           <div class="interest-rate">
             <ion-icon name="pulse-outline"></ion-icon>
-            <span>{{ totalInterest }} % / day</span>
+            <span>{{ totalInterest }} % / {{ translate('business').value[2]}}</span>
           </div>
 
           <div class="active-machine">
@@ -44,14 +44,14 @@
 
       <div class="active-packages">
         <div class="title">
-          <span>Active Packages</span>
+          <span>{{ translate('business').value[3]}}</span>
         </div>
 
         <table>
           <thead>
-            <th>Name</th>
-            <th>Rate</th>
-            <th>Money</th>
+            <th>{{ translate('business').value[4]}}</th>
+            <th>{{ translate('business').value[5]}}</th>
+            <th>{{ translate('business').value[6]}}</th>
           </thead>
           <tbody>
             <tr v-for="(item, index) in activePackages" :key="index">
@@ -65,14 +65,14 @@
 
       <div class="passive-packages">
         <div class="title">
-          <span>Passive Packages</span>
+          <span>{{ translate('business').value[7]}}</span>
         </div>
 
         <table>
           <thead>
-            <th>Name</th>
-            <th>Rate</th>
-            <th>Money</th>
+            <th>{{ translate('business').value[4]}}</th>
+            <th>{{ translate('business').value[5]}}</th>
+            <th>{{ translate('business').value[6]}}</th>
           </thead>
           <tbody>
             <tr v-for="(item, index) in passivePackages" :key="index">
@@ -94,12 +94,27 @@
 import PackageService from '@/services/PackageService'
 import UserService from '@/services/UserService'
 import { RouterLink } from 'vue-router'
-
+import { computed, onMounted } from 'vue';
+import { useLocaleStore } from '@/stores/LocaleStore';
 export default {
+  setup() {
+    const store = useLocaleStore();
+
+    // Initialize locale
+    onMounted(() => {
+      store.initializeLocale();
+    });
+
+    const translate = (key) => computed(() => store.translate(key)).value;
+
+    return {
+      translate,
+    };
+  },
   data() {
     return {
       passivePackages: null,
-      activePackages: null,
+      activePackages: [],
       totalInterest: 0,
       totalPackages: 0,
       totalMoney: 0,
