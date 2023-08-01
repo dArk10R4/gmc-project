@@ -30,11 +30,18 @@
 					<div class="adressWrite">
 						<form @submit.prevent="sendWithdrawRequest">
 							<div class="adress">
-								<input type="text" v-model="withdraw_adress" :placeholder="translate('withdraw').value[4]">
+								<label >
+									Address:
+									<input type="text" v-model="withdraw_adress" :placeholder="translate('withdraw').value[4]">
+
+								</label>
+								<label for="">
+									Amount: 
+									<input ref="amountInput" type="number" v-model.number="amount" min="10">
+								</label>
 							</div>
 							<div class="sendBtn">
-								<button type="submit">Withdraw funds</button>
-								
+								<button type="submit">{{ translate('withdraw').value[5] }}</button>
 							</div>
 						</form>
 					</div>
@@ -81,13 +88,16 @@ export default {
 			showSuccessMessage: false,
 			successMessage: '',
 			showErrorMessage: false,
-			errorMessage: ''
+			errorMessage: '',
+			amount: 10,
 		}
 	},
 	methods: {
 		async sendWithdrawRequest() {
+			console.log(this.amount)
 			const params = {
 				wallet: this.withdraw_adress,
+				amount :this.amount
 			}
 
 			try {
@@ -213,7 +223,12 @@ main {
 	border: none;
 }
 
-.adressWrite .adress,
+.adressWrite .adress{
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	align-items: center;
+}
 .adressWrite .sendBtn {
 	width: 100%;
 	display: flex;

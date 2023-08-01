@@ -16,6 +16,7 @@
       <!-- balance bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
         <p class="text-color">{{ translate('deposit').value[0] }}</p>
+
       </div>
       <!-- network bar start  -->
       <div class="networkBar" @click="makeDeposit">
@@ -229,7 +230,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-
+ 
 .currencyBar .currency ul li {
   display: flex;
   align-items: center;
