@@ -33,12 +33,8 @@
 								<input type="text" v-model="withdraw_adress" :placeholder="translate('withdraw').value[4]">
 							</div>
 							<div class="sendBtn">
-<<<<<<< HEAD
 								<button type="submit">Withdraw funds</button>
 								
-=======
-								<button type="submit">{{ translate('withdraw').value[5] }}</button>
->>>>>>> 859aef3f02c82a4f9a5a94e0e5e89a96e0344689
 							</div>
 						</form>
 					</div>

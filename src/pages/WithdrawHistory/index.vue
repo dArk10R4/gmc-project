@@ -2,16 +2,16 @@
     <main>
         <div id="title" >
 			<button id="historyBtn" onclick="history.back()">˂</button>
-            <p id="textW">Withdraw Record</p>
+            <p id="textW">{{ translate('withdraw_H').value[0] }} </p>
         </div>
         <p style="color:black; text-align: center; padding: 1em;" v-if="historyData.length===0" >History is empty</p>
         <div id="historyText" v-if="historyData.length!=0">
             <table class="table" >
                 <thead >
                     <tr class="center">
-                        <th >time</th>
-                        <th class="c_red">amount</th>
-                        <th class="c_purpl">state</th>
+                        <th >{{ translate('withdraw_H').value[1] }}</th>
+                        <th class="c_red">{{ translate('withdraw_H').value[2] }}</th>
+                        <th class="c_purpl">{{ translate('withdraw_H').value[3] }}</th>
                     </tr>
                 </thead>
                 <tbody >
@@ -19,7 +19,7 @@
                     <tr class="center" v-for="(item, index) in historyData" :key="index">
                         <td  >{{ item.date.slice(0,10) }}</td>
                         <td  class="c_red">-{{item.amount}}</td>
-                        <td class="c_purpl">{{ item.status==0?"Pending":item.status==1?"Success":"Failed"}}</td>
+                        <td class="c_purpl">{{ item.status==0? this.translate('withdraw_H').value[4] :item.status==1?this.translate('withdraw_H').value[5]:this.translate('withdraw_H').value[6]}}</td>
                     </tr>  
                     
                     
@@ -32,7 +32,15 @@
 
 <script >
 import PaymentService from '@/services/PaymentService';
+import { useLocaleStore } from '@/stores/LocaleStore';
 export default {
+    computed: {
+    translate() {
+      const store = useLocaleStore();
+      store.initializeLocale();
+      return (key) => store.translate(key);
+    },
+  },
     data() {
     return {
       historyData:[],

@@ -206,5 +206,23 @@
             "1":"Remaining Spin",
             "2": "You do not have the right to rotate!",
             "3":"Wheel spin successful!"
+        },
+        "withdraw_H":{
+            "0": "Withdraw Record",
+            "1": "time",
+            "2": "amount",
+            "3": "state",
+            "4": "Pending",
+            "5": "Success",
+            "6": "Failed"
+        },
+        "deposit_H":{
+            "0": "Deposit Record",
+            "1": "time",
+            "2": "amount",
+            "3": "state",
+            "4": "Pending",
+            "5": "Success",
+            "6": "Failed"
         }
 }

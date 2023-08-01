@@ -203,6 +203,24 @@
             "1":"Kalan Çark Hakkı",
             "2":"Çevirme hakkın yok!",
             "3":"Çark döndürme başarılı!"
+        },
+        "withdraw_H":{
+            "0": "Kayıt Çek",
+            "1": "zaman",
+            "2": "miktar",
+            "3": "status",
+            "4": "Beklemede",
+            "5": "Başarılı",
+            "6": "Başarısız"
+        },
+        "deposit_H":{
+            "0": "Depozito Kayıt",
+            "1": "zaman",
+            "2": "miktar",
+            "3": "status",
+            "4": "Beklemede",
+            "5": "Başarılı",
+            "6": "Başarısız"
         }
 
 }
