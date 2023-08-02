@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                    <button>Send</button>
+                    <button>{{ translate('reference').value[4] }}</button>
 
                     <div class="register">
                         <span>{{ translate('login').value[7] }}</span><router-link to="/auth/signin"><span

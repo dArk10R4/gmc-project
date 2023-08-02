@@ -59,7 +59,8 @@
         "5":"Enter your password",
         "6":"Login",
         "7":"Do you have an account",
-        "8":"Register"
+        "8":"Register",
+        "9":"Foget password?"
     },
     "Deposit": {
         "0":"Allowed formats jpg/jpeg/png"
@@ -98,7 +99,9 @@
             "5": "Do you want to send money?",
             "6": "Enter Amount",
             "7": "Yes",
-            "8": "No"
+            "8": "No",
+            "9": "Enter  e-mail",
+            "10":"Send"
         },
         "profile": {
             "0": "Deposit",

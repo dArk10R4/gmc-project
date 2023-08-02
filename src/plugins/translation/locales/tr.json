@@ -57,7 +57,8 @@
         "5":"Şifre girin",
         "6":"Giriş",
         "7":"Hesabınız yok mu?",
-        "8":"Kayıt olun"
+        "8":"Kayıt olun",
+        "9":"Şifrenizi mi unuttunuz?"
     },
     "Deposit": {
         "0":"İzin verilen biçimler jpg/jpeg/png"
@@ -97,7 +98,9 @@
         "5": "Para göndermek istiyor musun?",
         "6": "Tutarı Girin", 
         "7": "Evet",
-        "8": "Hayır"
+        "8": "Hayır",
+        "9": "E-maili giriniz",
+        "10":"Gönder"
     },
     "profile": {
         "0": "Depozito",

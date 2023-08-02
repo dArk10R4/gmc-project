@@ -6,15 +6,15 @@
 
                 <form @submit.prevent="handle_submit">
                     <div class="input-field">
-                        <label for="email"><span>email</span></label>
+                        <label for="email"><span>{{ translate('reference').value[2]}}</span></label>
                         <div class="input">
                             <ion-icon name="person-outline"></ion-icon>
-                            <input type="text" v-model="email" placeholder="Enter e-mail">
+                            <input type="text" v-model="email" :placeholder="translate('reference').value[9]">
                             <p class="error" v-if="errorMessages">{{ errorMessages.username }}</p>
                         </div>
                     </div>
 
-                    <button>Send</button>
+                    <button>{{ translate('reference').value[10]}}</button>
 
                     <div class="register">
                         <span>{{ translate('login').value[7] }}</span><router-link to="/auth/signin"><span
