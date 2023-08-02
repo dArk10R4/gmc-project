@@ -16,7 +16,6 @@
       <!-- balance bar end -->
       <div class="header" style="width: 90%; margin: 10px auto; border-radius: 5px;">
         <p class="text-color">{{ translate('deposit').value[0] }}</p>
-
       </div>
       <!-- network bar start  -->
       <div class="networkBar" @click="makeDeposit">
@@ -50,7 +49,11 @@
       <div class="addres" style="width: 90%; margin: auto;">
         <div class="addresBox">
           <div class="depositheader" style="margin-top: 50px;">
+            <p class="text-color">Deposit Addres (Tron(TRC20))</p>
           </div>
+          <div class="copyAddres">
+            <div>
+              <p style="font-size:12px;">TFkWxysMfnDE2zJKwWnTxAzfxuhSRfptGn</p>
             </div>
 
             <div>
@@ -58,7 +61,7 @@
             </div>
           </div>
         </div>
-      
+      </div>
       <!-- deposit addres end -->
       <div class="img-send text-div">
         <label for="img-send"><span style="color: black;">Send Decont: </span></label>
@@ -70,7 +73,7 @@
         <p id="text-color">{{ translate('deposit').value[7] }}</p> <br>
        
       </div>
-
+    </div>
     <!-- deposit end -->
         <div class="success-message" v-if="showSuccessMessage">{{ successMessage }}</div>
         <div class="error-message" v-if="showErrorMessage">{{ errorMessage }}</div>
