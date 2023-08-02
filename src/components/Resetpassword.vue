@@ -1,45 +1,33 @@
 <template>
     <main>
-        <div class="login">
-            <div class="text">
-                <div class="image">
-                    <img src="../../assets/images/v-invest.png" alt="">
-                </div>
-                <div class="about">
-                    <p>{{ translate('login').value[0] }}</p>
-                </div>
-            </div>
+            <div class="login">
             <div class="login-form">
                 <h2>{{ translate('login').value[1] }}</h2>
 
-                <form @submit.prevent="login">
-                    <div class="input-field">
-                        <label for="username"><span>{{ translate('login').value[2] }}</span></label>
-                        <div class="input">
-                            <ion-icon name="person-outline"></ion-icon>
-                            <input type="text" v-model="username" :placeholder="translate('login').value[4]">
-                            <p class="error" v-if="errorMessages.password">{{ errorMessages.password }}</p>
-                        </div>
-                    </div>
-
+                <form @submit.prevent="handle_submit">
                     <div class="input-field">
                         <label for="password"><span>{{ translate('login').value[3] }}</span></label>
                         <div class="input">
                             <ion-icon name="key-outline"></ion-icon>
-                            <input type="password" v-model="password" :placeholder="translate('login').value[5]">
+                            <input type="password" v-model="password1" :placeholder="translate('login').value[5]">
+                            <p class="error" v-if="errorMessages.password">{{ errorMessages.password }}</p>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="password"><span>{{ translate('login').value[3] }}</span></label>
+                        <div class="input">
+                            <ion-icon name="key-outline"></ion-icon>
+                            <input type="password" v-model="password2" :placeholder="translate('login').value[5]">
                             <p class="error" v-if="errorMessages.password">{{ errorMessages.password }}</p>
                         </div>
                     </div>
 
-                    <button>{{ translate('login').value[6] }}</button>
+                    <button>Send</button>
 
                     <div class="register">
-                        <span>{{ translate('login').value[7] }}</span><router-link to="/auth/signup"><span
-                                class="link">{{ translate('login').value[8] }}</span></router-link>
+                        <span>{{ translate('login').value[7] }}</span><router-link to="/auth/signin"><span
+                                class="link">{{ translate('signIn').value }}</span></router-link>
                     </div>
-                    <router-link to="/auth/forgetpassword"><span
-                                class="link">Forget password?</span>
-                        </router-link>
                 </form>
             </div>
         </div>
@@ -47,55 +35,57 @@
 </template>
 
 <script>
-import { useAuthStore } from '@/stores/AuthStore'
-import { useLocaleStore } from '@/stores/LocaleStore'; 
-import { computed, onMounted } from 'vue';
-
+import AuthService from '@/services/AuthService';
+import { useLocaleStore } from '@/stores/LocaleStore';
 export default {
-    setup() { 
-    const store = useLocaleStore(); 
- 
-    // Initialize locale 
-    onMounted(() => { 
-      store.initializeLocale(); 
-    }); 
- 
-    const translate = (key) => computed(() => store.translate(key)).value; 
- 
-    return { 
-      translate, 
-    }; 
+    computed: {
+    translate() {
+      const store = useLocaleStore();
+      store.initializeLocale();
+      return (key) => store.translate(key);
+    },
   },
-    data() {
+  mounted() {
+    // const pk = this.$route.params.pk;
+    // const token = this.$route.params.token;
+    console.log(this.$route.params)
+    // Do something with the 'id' variable, such as fetching data based on the ID.
+  },
+    data(){
+
         return {
-            username: '',
-            password: '',
+            password1: '',
+            password2:'',
             errorMessages: {
-                username: '',
                 password: '',
             }
         }
     },
     methods: {
-        async login() {
-            const authStore = useAuthStore()
-
-            const params = {
-                username: this.username,
-                password: this.password,
+        async handle_submit(e) {
+            e.preventDefault()
+            if(this.password1!=this.password2) {
+                this.errorMessages.password = "Paswords doesnt match"
             }
-
             try {
-                await authStore.login(params)
-            } catch (error) {
-                if (error.response.status === 422) {
-                    this.errorMessages = error.response.data;
-                }
+
+                data = (await AuthService.resetPassword({pk:this.$route.params.pk,token:this.$route.params.token},{
+                    password: this.password1
+                })).data;
+                console.log(data)
+                this.errorMessages.password = "Successfull"
+            } catch(e){
+                console.log(e.response.data.email)
+                this.errorMessages.password = e.response.data;
+
             }
+
         }
     }
 }
+
 </script>
+
 
 <style scoped>
 ::-webkit-scrollbar {
@@ -307,7 +297,7 @@ export default {
 
 <route lang="yaml">
     meta:
-      title: "Sign In"
+      title: "reset password"
       requiresAuth: false
-      redirectIfAuthenticated: true
+      redirectIfAuthenticated: false,
 </route>

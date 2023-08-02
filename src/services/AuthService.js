@@ -14,9 +14,13 @@ export default {
     return await axiosIns.post('auth/token/refresh', params)
   },
   async forgotPassword(params) {
-    return await axiosIns.post('auth/password/email', params)
+    return await axiosIns.post('auth/reset-password', params)
   },
-  async resetPassword(params) {
-    return await axiosIns.post('auth/password/reset', params)
+  async resetPassword({pk,token},params) {
+    return await axiosIns.post(`auth/reset-password/${pk}/${token}/`,params,{
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
   },
 }

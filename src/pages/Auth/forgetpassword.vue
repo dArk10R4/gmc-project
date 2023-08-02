@@ -1,45 +1,25 @@
 <template>
     <main>
-        <div class="login">
-            <div class="text">
-                <div class="image">
-                    <img src="../../assets/images/v-invest.png" alt="">
-                </div>
-                <div class="about">
-                    <p>{{ translate('login').value[0] }}</p>
-                </div>
-            </div>
+            <div class="login">
             <div class="login-form">
                 <h2>{{ translate('login').value[1] }}</h2>
 
-                <form @submit.prevent="login">
+                <form @submit.prevent="handle_submit">
                     <div class="input-field">
-                        <label for="username"><span>{{ translate('login').value[2] }}</span></label>
+                        <label for="email"><span>email</span></label>
                         <div class="input">
                             <ion-icon name="person-outline"></ion-icon>
-                            <input type="text" v-model="username" :placeholder="translate('login').value[4]">
-                            <p class="error" v-if="errorMessages.password">{{ errorMessages.password }}</p>
+                            <input type="text" v-model="email" placeholder="Enter e-mail">
+                            <p class="error" v-if="errorMessages">{{ errorMessages.username }}</p>
                         </div>
                     </div>
 
-                    <div class="input-field">
-                        <label for="password"><span>{{ translate('login').value[3] }}</span></label>
-                        <div class="input">
-                            <ion-icon name="key-outline"></ion-icon>
-                            <input type="password" v-model="password" :placeholder="translate('login').value[5]">
-                            <p class="error" v-if="errorMessages.password">{{ errorMessages.password }}</p>
-                        </div>
-                    </div>
-
-                    <button>{{ translate('login').value[6] }}</button>
+                    <button>Send</button>
 
                     <div class="register">
-                        <span>{{ translate('login').value[7] }}</span><router-link to="/auth/signup"><span
-                                class="link">{{ translate('login').value[8] }}</span></router-link>
+                        <span>{{ translate('login').value[7] }}</span><router-link to="/auth/signin"><span
+                                class="link">{{ translate('signIn').value }}</span></router-link>
                     </div>
-                    <router-link to="/auth/forgetpassword"><span
-                                class="link">Forget password?</span>
-                        </router-link>
                 </form>
             </div>
         </div>
@@ -47,55 +27,47 @@
 </template>
 
 <script>
-import { useAuthStore } from '@/stores/AuthStore'
-import { useLocaleStore } from '@/stores/LocaleStore'; 
-import { computed, onMounted } from 'vue';
-
+import AuthService from '@/services/AuthService';
+import { useLocaleStore } from '@/stores/LocaleStore';
 export default {
-    setup() { 
-    const store = useLocaleStore(); 
- 
-    // Initialize locale 
-    onMounted(() => { 
-      store.initializeLocale(); 
-    }); 
- 
-    const translate = (key) => computed(() => store.translate(key)).value; 
- 
-    return { 
-      translate, 
-    }; 
+    computed: {
+    translate() {
+      const store = useLocaleStore();
+      store.initializeLocale();
+      return (key) => store.translate(key);
+    },
   },
-    data() {
+    data(){
+
         return {
-            username: '',
-            password: '',
+            email: '',
             errorMessages: {
                 username: '',
-                password: '',
             }
         }
     },
     methods: {
-        async login() {
-            const authStore = useAuthStore()
-
-            const params = {
-                username: this.username,
-                password: this.password,
-            }
+        async handle_submit(e) {
+            e.preventDefault()
 
             try {
-                await authStore.login(params)
-            } catch (error) {
-                if (error.response.status === 422) {
-                    this.errorMessages = error.response.data;
-                }
+
+                data = (await AuthService.forgotPassword({
+                    email: this.email
+                })).data;
+                console.log(data)
+                this.errorMessages.username = "Mail sended to your e-mail";
+            } catch(e){
+                console.log(e.response.data.email)
+                this.errorMessages.username = e.response.data;
             }
+
         }
     }
 }
+
 </script>
+
 
 <style scoped>
 ::-webkit-scrollbar {
@@ -307,7 +279,7 @@ export default {
 
 <route lang="yaml">
     meta:
-      title: "Sign In"
+      title: "Forget Password"
       requiresAuth: false
       redirectIfAuthenticated: true
 </route>
